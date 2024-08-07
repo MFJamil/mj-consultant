@@ -3,7 +3,7 @@
         <nav class="container flex flex-col sm:flex-row items-center gap-4 text-white py-2" >
             <RouterLink :to="{name: 'home'}">
                 <div class="flex items-center gap-3" >
-                    <img src="../assets/Logo_2.png" class="size-24" >
+                    <img src="../assets/Log_2_shadow.png" style="height: 60px;width: 120px;" >
                     <p class="text-2xl">MJ Consultant</p>
                 </div>
             </RouterLink>
