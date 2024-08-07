@@ -48,13 +48,17 @@
 
     </header>
 </template>
-
-<script setup>
+<script lang="ts">
+ export default {
+    name: 'SiteNavigation'
+ }
+</script>
+<script lang="ts" setup>
 import {RouterLink} from "vue-router";
 import BaseModal from "./BaseModal.vue";
 import {ref} from "vue"
 
-const modalActive = ref(null);
+const modalActive = ref(false);
 const toggleModal= () =>{
     modalActive.value = !modalActive.value;
 }

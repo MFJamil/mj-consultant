@@ -14,8 +14,13 @@
         </Transition>
     </Teleport>
 </template>
+<script lang="ts">
+  export default {
+    name: 'BaseModal'
+  }
+</script>
 
-<script setup>
+<script lang="ts"  setup>
     defineEmits(['modal-close'])
     defineProps({
         modalActive:{
