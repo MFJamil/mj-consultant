@@ -4,9 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
+        /*
         "weather-primary": "#00668A",
         "weather-secondary": "#004E71",
         "teto": "#00AACC",
+        */
+        "weather-primary": "#FFFFFF",
+        "weather-secondary": "#004E71",
+
       },
       fontFamily: {
         Roboto: ["Roboto, sans-serif"],

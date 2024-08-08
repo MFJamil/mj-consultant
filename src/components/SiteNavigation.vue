@@ -1,10 +1,10 @@
 <template>
     <header class="sticky top-0 bg-weather-primary shadow-lg z-50"  >
-        <nav class="container flex flex-col sm:flex-row items-center gap-4 text-white py-2" >
+        <nav class="container flex flex-col sm:flex-row items-center gap-4 text-black py-2" >
             <RouterLink :to="{name: 'home'}">
                 <div class="flex items-center gap-3" >
-                    <img src="../assets/Log_2_shadow.png" style="height: 60px;width: 120px;" >
-                    <p class="text-2xl">MJ Consultant</p>
+                    <img src="../assets/Logo_MJ.png" style="height: 70px;width: 120px;" >
+                    <p class="text-2xl font-bold">MJ Consultant</p>
                 </div>
             </RouterLink>
             <div class="flex gap-3 flex-1 justify-end" >
