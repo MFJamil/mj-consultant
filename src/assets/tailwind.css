@@ -5,4 +5,13 @@
 body{
     background-image: url(./Bg_1_1980.jpg) !important;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;    
+    background-blend-mode: lighten;
+}
+
+
+
+MJ {
+
 }

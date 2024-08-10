@@ -5,12 +5,12 @@
             <RouterLink :to="{name: 'home'}">
                 <div class="flex items-center gap-3" >
                     <img src="../assets/Logo_MJ.png" style="height: 70px;width: 120px;" >
-                    <p class="text-2xl font-bold">MJ Consultant</p>
+                    <p class="text-2xl font-bold" :style="`color:rgb(${tc},${tc},${tc})`">MJ Consultant</p>
                 </div>
             </RouterLink>
             <div class="flex gap-3 flex-1 justify-end" >
-                <i class="fa-solid fa-circle-info text-xl hover:text-weather-secondary duration-150 cursor-pointer" @click="toggleModal"></i>
-                <i class="fa-solid fa-plus text-xl hover:text-weather-secondary duration-150 cursor-pointer"></i>
+                <i :style="`color:rgb(${tc},${tc},${tc})`" class="fa-solid fa-circle-info text-xl hover:text-weather-secondary duration-150 cursor-pointer" @click="toggleModal"></i>
+                <i :style="`color:rgb(${tc},${tc},${tc})`" class="fa-solid fa-plus text-xl hover:text-weather-secondary duration-150 cursor-pointer"></i>
                 
             </div>
             <BaseModal :modalActive="modalActive" @modal-close="toggleModal"> 
@@ -62,6 +62,8 @@ const NAV_HEIGHT_MAX = 150;
 const NAV_HEIGHT_MIN = 80;
 const NAV_END_EXPAND = 450;
 const OP_END_EXPAND = 30;
+
+
 let navDiff = NAV_HEIGHT_MAX - NAV_HEIGHT_MIN;
 
 
@@ -69,6 +71,7 @@ const modalActive = ref(false);
 const navHeight = ref(NAV_HEIGHT_MAX);
 const opacity = ref(0);
 const shadowOp = ref(0);
+const tc = ref(255);
 
 const toggleModal= () =>{
     modalActive.value = !modalActive.value;
@@ -81,6 +84,8 @@ const handleScrolling=()=>{
             NAV_HEIGHT_MAX-(navDiff*(window.scrollY/NAV_END_EXPAND));
         opacity.value = (NAV_HEIGHT_MAX-navHeight.value)/OP_END_EXPAND;
         shadowOp.value = opacity.value/10;
+        tc.value = 255 - ((NAV_HEIGHT_MAX-navHeight.value)/navDiff)*255;
+
     }
     
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full border-r-2" >Footer</div>
+  <div class="w-full border-8" >Footer</div>
 </template>
 
 <script lang="ts" setup>

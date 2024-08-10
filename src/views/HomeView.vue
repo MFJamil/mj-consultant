@@ -1,6 +1,6 @@
 
 <template>
-  <main class="container text-white">
+  <main class="container text-white mainBody">
     <!--
     <div class="pt-4 mb-8 relative">
       <input 
@@ -14,22 +14,29 @@
       >
     </div>
     -->
-    <div class="gemini container flex w-full flex-col sm:flex-row items-center gap-12 text-black py-20" >
-      <div class="flex flex-1" ><span class="mb-4 lg:text-5xl !leading-tight text-3xl font-bold">IT Consultant</span></div>
-      
-      <div class="flex justify-end" >
-        <img src="../assets/MJ_1.jpg" class="rounded-3xl shadow-2xl  size-1/2 opacity-20" />
-        
-      </div>
-    </div>
-    <section class="container">
-      <p>I'm Mohammed Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality.</p>
+
+    
+
+
+  <section class="bg-white rounded-2xl shadow-5xl">
+      <div class="gemini container flex w-full flex-col sm:flex-row items-center gap-12 text-black py-20" >
+        <div class="flex flex-1" ><span class="mb-4 lg:text-5xl !leading-tight text-3xl font-bold py-0">IT Consultant</span></div>
+        <div class="flex justify-end" >
+          <img src="../assets/MJ_2.png" class="rounded-3xl size-1/2 opacity-60" />
+        </div>
+        </div>
+      <p
+        variant="lead"
+        class="mb-4 !text-gray-500 md:pr-16 xl:pr-28"
+      >
+        I&apos;m Mohammed Jamil, a passionate developer based in Germany. Here,
+        you&apos;ll get a glimpse of my journey in the world of 
+        development, where creativity meets functionality.
+      </p>
+
     </section>
-    <section class="container py-28">
-      <h1 class="text-justify text-3xl font-bold py-44">Portfolio</h1>
-      <p>I'm Mohammed Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality.</p>
-    </section>
-  <Box>
+
+    <Box>
     <template #front>
       <p class="text-2xl font-sans font-bold py-10">MJamil</p> 
     </template>
@@ -40,6 +47,16 @@
     </template>
 
   </Box>
+  <div class="max-w-sm overflow-hidden shadow-lg bg-white rounded-3xl">
+    <img class="w-full" src="../assets/MJ_2.png" alt="Sunset in the mountains">
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+      <p class="text-gray-700 text-base">
+        I'm Mohammed Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality.
+      </p>
+    </div>
+  </div>
+
   <Box>
       <template #front>
         <div class="w-full" >
@@ -91,5 +108,6 @@
         background-position: 0% 0%;
     }
 }
+
 </style>
 
