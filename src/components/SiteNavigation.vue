@@ -1,5 +1,6 @@
 <template>
-    <header class="sticky top-0 bg-weather-primary shadow-lg z-50"  >
+    <header class="sticky top-0 bg-weather-primary z-50"  
+    :style="`height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`">
         <nav class="container flex flex-col sm:flex-row items-center gap-4 text-black py-2" >
             <RouterLink :to="{name: 'home'}">
                 <div class="flex items-center gap-3" >
@@ -57,11 +58,33 @@
 import {RouterLink} from "vue-router";
 import BaseModal from "./BaseModal.vue";
 import {ref} from "vue"
+const NAV_HEIGHT_MAX = 150;
+const NAV_HEIGHT_MIN = 80;
+const NAV_END_EXPAND = 450;
+const OP_END_EXPAND = 30;
+let navDiff = NAV_HEIGHT_MAX - NAV_HEIGHT_MIN;
+
 
 const modalActive = ref(false);
+const navHeight = ref(NAV_HEIGHT_MAX);
+const opacity = ref(0);
+const shadowOp = ref(0);
+
 const toggleModal= () =>{
     modalActive.value = !modalActive.value;
 }
+const handleScrolling=()=>{
+    console.log(window.scrollY);
+    let scrollVal = window.scrollY - NAV_END_EXPAND; 
+    if (window.scrollY>0){
+        navHeight.value = scrollVal>=0?NAV_HEIGHT_MIN:
+            NAV_HEIGHT_MAX-(navDiff*(window.scrollY/NAV_END_EXPAND));
+        opacity.value = (NAV_HEIGHT_MAX-navHeight.value)/OP_END_EXPAND;
+        shadowOp.value = opacity.value/10;
+    }
+    
 
+};
+window.addEventListener("scroll", (event) => {handleScrolling();});
 </script>
 

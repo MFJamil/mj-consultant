@@ -14,7 +14,7 @@
       >
     </div>
     -->
-    <div class="container flex w-full flex-col sm:flex-row items-center gap-12 text-black py-20" >
+    <div class="gemini container flex w-full flex-col sm:flex-row items-center gap-12 text-black py-20" >
       <div class="flex flex-1" ><span class="mb-4 lg:text-5xl !leading-tight text-3xl font-bold">IT Consultant</span></div>
       
       <div class="flex justify-end" >
@@ -33,6 +33,12 @@
     <template #front>
       <p class="text-2xl font-sans font-bold py-10">MJamil</p> 
     </template>
+    <template #right>
+      <div class="flex items-center gap-3 place-items-center" >
+        <img src="../assets/Logo_MJ_shadow_white.png" class="size-30" >
+      </div>
+    </template>
+
   </Box>
   <Box>
       <template #front>
@@ -46,6 +52,7 @@
       </div>
     </template>
   </Box>
+  
 
 </main>
 </template>
@@ -62,6 +69,27 @@
 
 .panel--rotate-y {
   transform: rotateY(45deg);
+}
+.gemini {
+    background: radial-gradient(circle,dodgerblue,yellow);
+    background-clip: text;
+    color: transparent;
+    animation: gemini 15s linear infinite;
+    background-size: 200% 200%;
+}
+@keyframes gemini {
+    
+    0%{
+        background-position: 0% 0%;
+    }
+    
+    50%{
+        background-position: 100% 100%;
+    }
+    
+    100%{
+        background-position: 0% 0%;
+    }
 }
 </style>
 
