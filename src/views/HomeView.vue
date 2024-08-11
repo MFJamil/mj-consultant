@@ -69,7 +69,7 @@
       </div>
     </template>
   </Box>
-  
+  <CardPicActionVue />
 
 </main>
 </template>
@@ -77,6 +77,8 @@
 <script setup lang="ts">
   import {ref} from 'vue';
   import Box from 'smyld-lib-3d/src/components/Box.vue'
+
+  import CardPicActionVue from '../components/CardPicAction.vue';
   
    
   const searchQuery = ref('')  

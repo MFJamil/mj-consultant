@@ -105,4 +105,6 @@ console.log("Navigator : ");
 console.dir(navigator);
 
 </script>
+<style scoped>
+</style>
 
