@@ -33,7 +33,7 @@ const menu = ref([
   {id: 'mnu_Info', title: 'Info'},
   {id: 'mnu_Kontakt', title: 'Kontakt'},
   {id: 'mnu_skills', title: 'Skills'},
-  {id: 'mnu_projects', title: 'Projects'},
+  {id: 'mnu_projects', title: 'Projects',selected: true},
 ]);
 </script>
 <style >

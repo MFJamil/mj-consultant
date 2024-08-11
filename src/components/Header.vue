@@ -14,10 +14,10 @@
             </svg>
         </button>
 
-        <div class="md:hidden w-full sm:block sm:w-auto transition-opacity" id="navbar-default-mobile" v-show="showMenu">
-          <ul class="font-medium flex flex-row p-4 sm:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 sm:flex-row sm:space-x-8 rtl:space-x-reverse sm:mt-0 sm:border-0 sm:bg-white dark:bg-gray-800 sm:dark:bg-gray-900 dark:border-gray-700">
+        <div class="relative w-full md:hidden sm:block sm:w-auto transition-opacity" id="navbar-default-mobile" v-show="showMenu">
+          <ul class="font-medium flex flex-col p-4 sm:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 sm:flex-row sm:space-x-8 rtl:space-x-reverse sm:mt-0 sm:border-0 sm:bg-white dark:bg-gray-800 sm:dark:bg-gray-900 dark:border-gray-700">
             <li v-for="item in menu" :key="item.id">
-              <a href="#" class="hover:text-white block py-2 px-3 text-white rounded sm:bg-transparent sm:text-blue-700 sm:p-0 dark:text-white sm:dark:text-blue-500" aria-current="page">{{ item.title }}</a>
+              <a href="#" :class="`${menuClasses} ${item.selected?'bg-blue-700':''}`" aria-current="page" @click="showMenu=false">{{ item.title }}</a>
             </li>
           </ul>
         </div>
@@ -27,7 +27,7 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-default" >
           <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li v-for="item in menu" :key="item.id">
-              <a href="#" class="hover:text-white block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">{{ item.title }}</a>
+              <a href="#" :class="`${menuClasses} ${item.selected?'bg-blue-700':''}`" aria-current="page">{{ item.title }}</a>
             </li>
           </ul>
         </div>
@@ -45,12 +45,14 @@
         import type{MenuItem}  from '../model/MenuItem';
         import { ref, type PropType } from 'vue';
         const isMobile = ref(((navigator)as any).userAgentData.mobile);
+        const menuClasses = ref('hover:text-white block py-2 px-3 text-white rounded sm:bg-transparent sm:text-blue-700 sm:p-0 dark:text-white sm:dark:text-blue-500');
         const props = defineProps({
             menu:{
                 type: Array as PropType<MenuItem[]>,
                 defult:[]
             },
             title: String,
+
             iconFile: String
         })
         const showMenu = ref(!isMobile.value);
