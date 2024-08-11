@@ -58,7 +58,7 @@
 import {RouterLink} from "vue-router";
 import BaseModal from "./BaseModal.vue";
 import {ref} from "vue"
-const isMobile = ref(navigator.userAgentData.mobile);
+const isMobile = ref(((navigator)as any).userAgentData.mobile);
 const PC_NAV_HEIGHT_MAX = 150;
 const PC_NAV_HEIGHT_MIN = 80;
 const MO_NAV_HEIGHT_MAX = 80;
