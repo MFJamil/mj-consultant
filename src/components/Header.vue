@@ -14,5 +14,6 @@
     height: 60px;
     background-color: white;
     width: 100%;
+    padding: 2vw !important;
  }
  </style>
