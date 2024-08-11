@@ -5,9 +5,14 @@
     <RouterView />
     <Footer />
   </div>
-
+<TestApp />
   -->
-  <TestApp />
+  <div class="flex flex-col min-h-screen font-Roboto">
+    <Header :menu="menu" title="MJ Consultant" icon-file="assets/Logo_MJ_shadow_white.png" /> 
+    <RouterView />
+    <Footer />
+  </div>
+  
 </template>
 <script lang="ts" setup>
 /* 
@@ -22,7 +27,14 @@ import SiteNavigation from './components/SiteNavigation.vue';
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
 import TestApp from './components/TestApp.vue'
-
+import { title } from 'process';
+import { ref } from 'vue';
+const menu = ref([
+  {id: 'mnu_Info', title: 'Info'},
+  {id: 'mnu_Kontakt', title: 'Kontakt'},
+  {id: 'mnu_skills', title: 'Skills'},
+  {id: 'mnu_projects', title: 'Projects'},
+]);
 </script>
 <style >
 
