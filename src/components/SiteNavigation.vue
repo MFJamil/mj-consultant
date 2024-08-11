@@ -1,6 +1,6 @@
 <template>
     <header class="sticky top-0 bg-weather-primary z-50 fixed"  
-    :style="`height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`">
+    :style="`position:fixed;top:0;height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`">
         <nav class="container lg:flex flex-row items-center gap-4 text-black py-2" >
             <RouterLink :to="{name: 'home'}">
                 <div class="lg:flex items-center gap-3 hidden" >
@@ -8,7 +8,7 @@
                     <p class="text-2xl font-bold" :style="`color:rgb(${tc},${tc},${tc})`">MJ Consultant</p>
                 </div>
             </RouterLink>
-            <div class="flex gap-3 flex-1 justify-end" >
+            <div class="gap-3 flex-1 justify-end lg:flex" >
                 <i :style="`color:rgb(${tc},${tc},${tc})`" class="fa-solid fa-circle-info text-xl hover:text-weather-secondary duration-150 cursor-pointer" @click="toggleModal"></i>
                 <i :style="`color:rgb(${tc},${tc},${tc})`" class="fa-solid fa-plus text-xl hover:text-weather-secondary duration-150 cursor-pointer"></i>
                 
