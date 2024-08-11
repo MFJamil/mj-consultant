@@ -98,7 +98,7 @@ const handleScrolling=()=>{
 
 };
 window.addEventListener("scroll", (event) => {handleScrolling();});
-console.log("Mobile Check : " + navigator.userAgentData.mobile);
+console.log("Mobile Check : " + isMobile.value);
 console.log("Navigator : ");
 
 console.dir(navigator);
