@@ -2,21 +2,23 @@
     <header class="top-0 bg-weather-primary z-50 sticky"
     :style="`height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`"
     >
-    <nav >
+    <nav class="text-black">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img :src="iconFile" class="h-12" alt="Flowbite Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{title}}</span>
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" 
+            :style="`color:rgb(${tc},${tc},${tc})`"
+            >{{title}}</span>
         </a>
-        <button @click="showMenu=!showMenu" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+        <button @click="showMenu=!showMenu" :style="`color:rgb(${tc},${tc},${tc})`" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
             </svg>
         </button>
 
-        <div class="relative w-full md:hidden sm:block sm:w-auto transition-opacity" id="navbar-default-mobile" v-show="showMenu">
-          <ul class="font-medium flex flex-col p-4 sm:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 sm:flex-row sm:space-x-8 rtl:space-x-reverse sm:mt-0 sm:border-0 sm:bg-white dark:bg-gray-800 sm:dark:bg-gray-900 dark:border-gray-700">
+        <div class="relative w-full md:hidden sm:block sm:w-auto" id="navbar-default-mobile" :style="`background-color:rgba(255,255,255,${opacity})`" v-show="showMenu">
+          <ul class="font-medium flex flex-col p-4 sm:p-0 mt-4 border border-gray-100 rounded-lg sm:flex-row sm:space-x-8 rtl:space-x-reverse sm:mt-0 sm:border-0 ">
             <li v-for="item in menu" :key="item.id">
               <a href="#" :class="`${menuClasses} ${item.selected?'bg-blue-700':''}`" aria-current="page" @click="showMenu=false">{{ item.title }}</a>
             </li>
@@ -26,9 +28,11 @@
 
 
         <div class="hidden w-full md:block md:w-auto" id="navbar-default" >
-          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li v-for="item in menu" :key="item.id">
-              <a href="#" :class="`${menuClasses} ${item.selected?'bg-blue-700 dark:text-white text-white':''}`" aria-current="page">{{ item.title }}</a>
+              <a href="#" 
+                :class="`${menuClasses} ${item.selected?'bg-blue-700 ':''}`" 
+                :style="`color:rgb(${tc},${tc},${tc})`" aria-current="page">{{ item.title }}</a>
             </li>
           </ul>
         </div>
@@ -46,7 +50,7 @@
         import type{MenuItem}  from '../model/MenuItem';
         import { ref, type PropType } from 'vue';
         const isMobile = ref(((navigator)as any).userAgentData.mobile);
-        const menuClasses = ref('hover:dark:text-white hover:text-red-800 block py-2 px-3 text-black rounded sm:bg-transparent sm:text-blue-700 sm:p-0 dark:text-white sm:dark:text-blue-500');
+        const menuClasses = ref('block py-2 px-3 rounded bg-transparent sm:p-0');
         const props = defineProps({
             menu:{
                 type: Array as PropType<MenuItem[]>,
