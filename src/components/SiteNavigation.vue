@@ -1,7 +1,7 @@
 <template>
     <header class="sticky top-0 bg-weather-primary z-50"  
     :style="`height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`">
-        <nav class="container flex flex-col sm:flex-row items-center gap-4 text-black py-2" >
+        <nav class="container lg:flex flex-row items-center gap-4 text-black py-2" >
             <RouterLink :to="{name: 'home'}">
                 <div class="lg:flex items-center gap-3 hidden" >
                     <img src="../assets/Logo_MJ.png" style="height: 70px;width: 120px;" >
@@ -58,8 +58,14 @@
 import {RouterLink} from "vue-router";
 import BaseModal from "./BaseModal.vue";
 import {ref} from "vue"
-const NAV_HEIGHT_MAX = 150;
-const NAV_HEIGHT_MIN = 80;
+const isMobile = ref(navigator.userAgentData.mobile);
+const PC_NAV_HEIGHT_MAX = 150;
+const PC_NAV_HEIGHT_MIN = 80;
+const MO_NAV_HEIGHT_MAX = 80;
+const MO_NAV_HEIGHT_MIN = 40;
+
+const NAV_HEIGHT_MAX =  isMobile.value?MO_NAV_HEIGHT_MAX:PC_NAV_HEIGHT_MAX;
+const NAV_HEIGHT_MIN = isMobile.value?MO_NAV_HEIGHT_MIN:PC_NAV_HEIGHT_MIN;
 const NAV_END_EXPAND = 450;
 const OP_END_EXPAND = 30;
 
@@ -72,6 +78,7 @@ const navHeight = ref(NAV_HEIGHT_MAX);
 const opacity = ref(0);
 const shadowOp = ref(0);
 const tc = ref(255);
+
 
 const toggleModal= () =>{
     modalActive.value = !modalActive.value;
@@ -91,5 +98,10 @@ const handleScrolling=()=>{
 
 };
 window.addEventListener("scroll", (event) => {handleScrolling();});
+console.log("Mobile Check : " + navigator.userAgentData.mobile);
+console.log("Navigator : ");
+
+console.dir(navigator);
+
 </script>
 
