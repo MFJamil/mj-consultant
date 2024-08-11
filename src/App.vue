@@ -9,7 +9,10 @@
   -->
   <div class="flex flex-col min-h-screen font-Roboto">
     <Header :menu="menu" title="MJ Consultant" icon-file="assets/Logo_MJ_shadow_white.png" /> 
-    <RouterView />
+    <div class="flex flex-col min-h-screen font-Roboto m-20">
+      <RouterView />
+
+    </div>
     <Footer />
   </div>
   
