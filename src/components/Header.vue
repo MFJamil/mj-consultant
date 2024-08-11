@@ -1,7 +1,8 @@
 <template>
-   
-
-    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <header class="top-0 bg-weather-primary z-50 sticky"
+    :style="`height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`"
+    >
+    <nav >
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img :src="iconFile" class="h-12" alt="Flowbite Logo" />
@@ -27,13 +28,13 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-default" >
           <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li v-for="item in menu" :key="item.id">
-              <a href="#" :class="`${menuClasses} ${item.selected?'bg-blue-700':''}`" aria-current="page">{{ item.title }}</a>
+              <a href="#" :class="`${menuClasses} ${item.selected?'bg-blue-700 dark:text-white text-white':''}`" aria-current="page">{{ item.title }}</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    
+</header>
      </template>
      
      <script lang="ts">
@@ -45,7 +46,7 @@
         import type{MenuItem}  from '../model/MenuItem';
         import { ref, type PropType } from 'vue';
         const isMobile = ref(((navigator)as any).userAgentData.mobile);
-        const menuClasses = ref('hover:text-white block py-2 px-3 text-white rounded sm:bg-transparent sm:text-blue-700 sm:p-0 dark:text-white sm:dark:text-blue-500');
+        const menuClasses = ref('hover:dark:text-white hover:text-red-800 block py-2 px-3 text-black rounded sm:bg-transparent sm:text-blue-700 sm:p-0 dark:text-white sm:dark:text-blue-500');
         const props = defineProps({
             menu:{
                 type: Array as PropType<MenuItem[]>,
@@ -56,6 +57,39 @@
             iconFile: String
         })
         const showMenu = ref(!isMobile.value);
+        const PC_NAV_HEIGHT_MAX = 150;
+        const PC_NAV_HEIGHT_MIN = 80;
+        const MO_NAV_HEIGHT_MAX = 80;
+        const MO_NAV_HEIGHT_MIN = 60;
+
+        const NAV_HEIGHT_MAX =  isMobile.value?MO_NAV_HEIGHT_MAX:PC_NAV_HEIGHT_MAX;
+        const NAV_HEIGHT_MIN = isMobile.value?MO_NAV_HEIGHT_MIN:PC_NAV_HEIGHT_MIN;
+        const NAV_END_EXPAND = 450;
+        const OP_END_EXPAND = 30;
+
+
+        let navDiff = NAV_HEIGHT_MAX - NAV_HEIGHT_MIN;
+
+
+        const modalActive = ref(false);
+        const navHeight = ref(NAV_HEIGHT_MAX);
+        const opacity = ref(0);
+        const shadowOp = ref(0);
+        const tc = ref(255);
+        const handleScrolling=()=>{
+            console.log(window.scrollY);
+            let scrollVal = window.scrollY - NAV_END_EXPAND; 
+            if (window.scrollY>0){
+                navHeight.value = scrollVal>=0?NAV_HEIGHT_MIN:
+                    NAV_HEIGHT_MAX-(navDiff*(window.scrollY/NAV_END_EXPAND));
+                opacity.value = (NAV_HEIGHT_MAX-navHeight.value)/OP_END_EXPAND;
+                shadowOp.value = opacity.value/10;
+                tc.value = 255 - ((NAV_HEIGHT_MAX-navHeight.value)/navDiff)*255;
+
+            }
+
+        };
+        window.addEventListener("scroll", (event) => {handleScrolling();});
 
     </script>
     
