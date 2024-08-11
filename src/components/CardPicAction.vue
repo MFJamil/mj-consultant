@@ -24,9 +24,13 @@
     </div>
  </template>
  
- <script>
- </script>
- 
+ <script lang="ts">
+ export default {
+    name: 'CardPicAction'
+ }
+</script>
+<script lang="ts" setup>
+</script>
  <style>
  
  </style>
