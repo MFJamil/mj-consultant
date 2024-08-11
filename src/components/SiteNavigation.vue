@@ -3,7 +3,7 @@
     :style="`height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`">
         <nav class="container flex flex-col sm:flex-row items-center gap-4 text-black py-2" >
             <RouterLink :to="{name: 'home'}">
-                <div class="flex items-center gap-3" >
+                <div class="lg:flex items-center gap-3 hidden" >
                     <img src="../assets/Logo_MJ.png" style="height: 70px;width: 120px;" >
                     <p class="text-2xl font-bold" :style="`color:rgb(${tc},${tc},${tc})`">MJ Consultant</p>
                 </div>
