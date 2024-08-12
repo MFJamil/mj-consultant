@@ -1,11 +1,7 @@
 <template>
-    <header class="top-0 bg-weather-primary z-50 block sticky backdrop-saturate-200 backdrop-blur-2xl w-full max-w-full"
-   
-    >
-    <nav class="text-black block">
+    <nav class="text-white block">
       TEST
     </nav> 
-    </header>
 
 <!--
     <header class="top-0 bg-weather-primary z-50 block sticky backdrop-saturate-200 backdrop-blur-2xl w-full max-w-full"
