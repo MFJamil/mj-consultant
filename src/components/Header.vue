@@ -1,5 +1,5 @@
 <template>
-    <header class="top-0 bg-weather-primary z-50 block fixed"
+    <header class="top-0 bg-weather-primary z-50 block sticky backdrop-saturate-200 backdrop-blur-2xl w-full max-w-full"
     :style="`position: -webkit-sticky;height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`"
     >
     <nav class="text-black block">
@@ -17,7 +17,8 @@
             </svg>
         </button>
 
-        <div class="relative w-full md:hidden sm:block sm:w-auto" id="navbar-default-mobile" :style="`background-color:rgba(255,255,255,${opacity})`" v-show="showMenu">
+        <div class="backdrop-saturate-200 backdrop-blur-2xl relative w-full md:hidden sm:block sm:w-auto" 
+            id="navbar-default-mobile" :style="`background-color:rgba(255,255,255,${opacity})`" v-show="showMenu">
           <ul class="font-medium flex flex-col p-4 sm:p-0 mt-4 border border-gray-100 rounded-lg sm:flex-row sm:space-x-8 rtl:space-x-reverse sm:mt-0 sm:border-0 ">
             <li v-for="item in menu" :key="item.id">
               <a :style="`color:rgb(${tc},${tc},${tc})`" href="#" :class="`${menuClasses} ${item.selected?'bg-blue-700':''}`" aria-current="page" @click="showMenu=false">{{ item.title }}</a>
