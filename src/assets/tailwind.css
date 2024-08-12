@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-    background-image: url(./Bg_1_1980.jpg) !important;
+    background-image: url(./Bg_2_1980.jpg) !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;    
@@ -11,7 +11,3 @@ body{
 }
 
 
-
-MJ {
-
-}

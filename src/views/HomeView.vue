@@ -20,7 +20,7 @@
 
   <section class="bg-white rounded-2xl shadow-5xl">
       <div class="gemini container flex w-full flex-col sm:flex-row items-center gap-12 text-black py-20" >
-        <div class="flex flex-1" ><span class="mb-4 lg:text-5xl !leading-tight text-3xl font-bold py-0">IT Consultant</span></div>
+        <div class="flex flex-1" ><span class="mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</span></div>
         <div class="flex justify-end" >
           <img src="../assets/MJ_2.png" class="rounded-3xl size-1/2 opacity-50" />
         </div>
