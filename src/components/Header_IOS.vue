@@ -1,10 +1,10 @@
 <template>
-    <nav class="text-white block">
-      <div class="container mx-auto flex items-center justify-between">
+    
+      <div class="container mx-auto flex items-center justify-between text-white">
         TEST
       </div>
       
-    </nav> 
+    
 
 <!--
     <header class="top-0 bg-weather-primary z-50 block sticky backdrop-saturate-200 backdrop-blur-2xl w-full max-w-full"
