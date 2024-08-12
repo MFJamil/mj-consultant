@@ -35,7 +35,6 @@
  }
 </script>
 <script lang="ts" setup>
-import { unwatchFile } from 'fs';
 import type { CardPic } from '../model/CardPic';
 import {ref } from 'vue'
 import type{PropType} from 'vue'
