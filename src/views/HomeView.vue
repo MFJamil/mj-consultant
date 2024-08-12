@@ -28,11 +28,11 @@
     </section>
 
     <CardPicAction 
-      :picture="{fileName: 'assets/MJ_2.png'}" title="IT Consultant" :text="infoText" />
+      :picture="{fileName: 'assets/MJ_2.png',height:'20vw'}" title="IT Consultant" :text="infoText" />
     
       <Box>
     <template #front>
-      <p class="text-2xl font-sans font-bold py-10">MJamil</p> 
+      <p class="text-2xl font-sans font-bold py-10">Front End</p> 
     </template>
     <template #right>
       <div class="flex items-center gap-3 place-items-center" >
