@@ -5,17 +5,19 @@
   <section class="bg-white rounded-2xl shadow-5xl">
       <div class="gemini container flex w-full flex-col sm:flex-row items-center gap-12 text-black py-20" >
         <div class="flex flex-1" ><span class="mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</span></div>
+        <!--
         <div class="flex justify-end" >
           <img src="../assets/MJ_2.png" class="rounded-3xl size-1/2 opacity-50" />
         </div>
+        -->
         </div>
     </section>
 
     <CardPicAction 
-      :picture="{fileName: 'assets/MJ_2.png',height:'40vw'}" title="IT Consultant" :text="infoText" />
+      :picture="{fileName: 'assets/MJ_2.png',height:'40vw'}" title="Welcome" :text="infoText" />
 
 
-  <div class="lg:flex items-center  max-w-full " style="border:1px solid white;">
+  <div class="lg:flex flex-1 items-center  max-w-full " style="border:1px solid white;">
     <Box v-for="skill in skills" :key="skill.title">
       <template #front>
         <p class="text-2xl font-sans font-bold justify-center align-middle py-20">{{ skill.title }}</p> 
