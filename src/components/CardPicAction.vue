@@ -1,16 +1,18 @@
  <template>
     <div
-        class="rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark place-items-center lg:flex">
+        class="rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark place-items-center lg:flex my-20">
+    
         <img
-            class="rounded-t-lg size-auto opacity-50"
-            :src="picture"
+            :class="picClasses"
+            :src="picture.fileName"
+
             alt="" />
     
-    
+            {{ picClasses }}
     <div class="p-6 text-surface dark:text-white">
         <h5 class="mb-2 text-5xl font-medium leading-tight text-black">{{ title }}</h5>
         <p class="mb-4 font-bold text-gray-500 text-lg">
-        {{text}}
+            {{text}}
         </p>
         <!--
         <button
@@ -33,9 +35,13 @@
  }
 </script>
 <script lang="ts" setup>
+import { unwatchFile } from 'fs';
+import type { CardPic } from '../model/CardPic';
+import { PropType, ref } from 'vue'
 const props = defineProps({
     picture: {
-        
+        type: Object as PropType<CardPic>,
+        default:{fileName: '',opacity: 50}
     },
 
     title: String,
@@ -43,6 +49,7 @@ const props = defineProps({
 
 
 })
+const picClasses = ref(`rounded-t-lg size-auto opacity-${props.picture.opacity!=undefined?props.picture.opacity:50}`);
 </script>
  <style>
  

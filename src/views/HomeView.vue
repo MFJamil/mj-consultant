@@ -25,18 +25,12 @@
           <img src="../assets/MJ_2.png" class="rounded-3xl size-1/2 opacity-50" />
         </div>
         </div>
-      <p
-        variant="lead"
-        class="mb-4 !text-gray-500 md:pr-16 xl:pr-28"
-      >
-        I&apos;m Mohammed Jamil, a passionate developer based in Germany. Here,
-        you&apos;ll get a glimpse of my journey in the world of 
-        development, where creativity meets functionality.
-      </p>
-
     </section>
 
-    <Box>
+    <CardPicAction 
+      :picture="{fileName: 'assets/MJ_2.png'}" title="IT Consultant" :text="infoText" />
+    
+      <Box>
     <template #front>
       <p class="text-2xl font-sans font-bold py-10">MJamil</p> 
     </template>
@@ -69,7 +63,7 @@
       </div>
     </template>
   </Box>
-  <CardPicAction picture="assets/MJ_2.png" title="IT Consultant" :text="infoText" />
+
 
 </main>
 </template>
