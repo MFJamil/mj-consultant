@@ -66,7 +66,7 @@
         const showMenu = ref(!isMobile.value);
         const PC_NAV_HEIGHT_MAX = 150;
         const PC_NAV_HEIGHT_MIN = 80;
-        const MO_NAV_HEIGHT_MAX = 80;
+        const MO_NAV_HEIGHT_MAX = 90;
         const MO_NAV_HEIGHT_MIN = 65;
 
         const NAV_HEIGHT_MAX =  isMobile.value?MO_NAV_HEIGHT_MAX:PC_NAV_HEIGHT_MAX;
