@@ -51,7 +51,8 @@
     <script lang="ts" setup>
         import type{MenuItem}  from '../model/MenuItem';
         import { ref, type PropType } from 'vue';
-        const isMobile = ref(((navigator)as any).userAgentData.mobile);
+        import {onMobile} from "../utils/BrowserUtils";
+        const isMobile = ref(onMobile());
         const menuClasses = ref('block py-2 px-3 rounded bg-transparent sm:p-0');
         const props = defineProps({
             menu:{
