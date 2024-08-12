@@ -52,7 +52,7 @@
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
       <p class="text-gray-700 text-base">
-        I'm Mohammed Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality.
+        
       </p>
     </div>
   </div>
@@ -69,7 +69,7 @@
       </div>
     </template>
   </Box>
-  <CardPicActionVue />
+  <CardPicAction picture="assets/MJ_2.png" title="IT Consultant" :text="infoText" />
 
 </main>
 </template>
@@ -78,10 +78,11 @@
   import {ref} from 'vue';
   import Box from 'smyld-lib-3d/src/components/Box.vue'
 
-  import CardPicActionVue from '../components/CardPicAction.vue';
+  import CardPicAction from '../components/CardPicAction.vue';
   
    
   const searchQuery = ref('')  
+  const infoText = "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
 
 </script>
 <style scoped>
