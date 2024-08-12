@@ -3,7 +3,9 @@
     :style="`position: -webkit-sticky;height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`"
     >
     <nav class="text-black block">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div :class="`max-w-screen-xl flex flex-wrap items-center justify-between mx-auto relative`"
+        :style="`top: ${topLoc}px !important;`"
+      >
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img :src="iconFile" class="h-12" alt="Flowbite Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" 
@@ -83,6 +85,7 @@
         const opacity = ref(0);
         const shadowOp = ref(0);
         const tc = ref(255);
+        const topLoc = ref(NAV_HEIGHT_MAX-NAV_HEIGHT_MAX/2-20)
         const handleScrolling=()=>{
             console.log(window.scrollY);
             let scrollVal = window.scrollY - NAV_END_EXPAND; 
@@ -92,9 +95,8 @@
                 opacity.value = (NAV_HEIGHT_MAX-navHeight.value)/OP_END_EXPAND;
                 shadowOp.value = opacity.value/10;
                 tc.value = 255 - ((NAV_HEIGHT_MAX-navHeight.value)/navDiff)*255;
-
+                topLoc.value = navHeight.value/2-20;
             }
-
         };
         window.addEventListener("scroll", (event) => {handleScrolling();});
 
