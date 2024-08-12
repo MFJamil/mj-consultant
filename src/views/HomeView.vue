@@ -41,15 +41,6 @@
     </template>
 
   </Box>
-  <div class="max-w-sm overflow-hidden shadow-lg bg-white rounded-3xl">
-    <img class="w-full" src="../assets/MJ_2.png" alt="Sunset in the mountains">
-    <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-      <p class="text-gray-700 text-base">
-        
-      </p>
-    </div>
-  </div>
 
   <Box>
       <template #front>

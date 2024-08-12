@@ -3,14 +3,14 @@
         class="rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark place-items-center lg:flex my-20">
     
         <img
-            :class="picClasses"
+            :class="`rounded-t-lg size-auto opacity-${props.picture.opacity!=undefined?props.picture.opacity:50}`"
             :src="picture.fileName"
 
             alt="" />
     
-            {{ picClasses }}
+            
     <div class="p-6 text-surface dark:text-white">
-        <h5 class="mb-2 text-5xl font-medium leading-tight text-black">{{ title }}</h5>
+        <h5 class="mb-2 lg:text-5xl md:text-2xl font-medium leading-tight text-black">{{ title }}</h5>
         <p class="mb-4 font-bold text-gray-500 text-lg">
             {{text}}
         </p>
@@ -49,7 +49,7 @@ const props = defineProps({
 
 
 })
-const picClasses = ref(`rounded-t-lg size-auto opacity-${props.picture.opacity!=undefined?props.picture.opacity:50}`);
+
 </script>
  <style>
  
