@@ -1,22 +1,6 @@
 
 <template>
   <main class="container text-white mainBody">
-    <!--
-    <div class="pt-4 mb-8 relative">
-      <input 
-        v-model="searchQuery"
-        type="text" placeholder="Search for a city or state"
-        class="py-2 px-1 w-full bg-transparent border-b 
-        focus:border-weather-secondary 
-        focus:outline-none 
-        focus:placeholder-weather-secondary
-        focus:shadow-sm"
-      >
-    </div>
-    -->
-
-    
-
 
   <section class="bg-white rounded-2xl shadow-5xl">
       <div class="gemini container flex w-full flex-col sm:flex-row items-center gap-12 text-black py-20" >
@@ -28,40 +12,21 @@
     </section>
 
     <CardPicAction 
-      :picture="{fileName: 'assets/MJ_2.png',height:'20vw'}" title="IT Consultant" :text="infoText" />
+      :picture="{fileName: 'assets/MJ_2.png',height:'40vw'}" title="IT Consultant" :text="infoText" />
 
 
-   <div class="flex place-content-center w-full max-w-full">
-   <Box>
-    <template #front>
-      <p class="text-2xl font-sans font-bold justify-center align-middle py-20">Front End</p> 
-    </template>
-    <template #right>
-      <div class="flex flex-col  gap-3 place-items-start px-4 py-3 my-4" >
-        <li>Vue</li>
-        <li>React</li>
-        <li>Angular</li>
-        <li>HTML5,css,tailwind</li>
-      </div>
-    </template>
-  </Box>
-
-  <Box>
-    <template #front>
-      <p class="text-2xl font-sans font-bold justify-center align-middle py-20">Languages</p> 
-    </template>
-    <template #right>
-      <div class="flex flex-col  gap-3 place-items-start px-4 py-3 my-2" >
-        <li>Java</li>
-        <li>Typescript</li>
-        <li>Javascript</li>
-        <li>Python</li>
-        <li>C++</li>
-      </div>
-    </template>
-  </Box>
-
-    </div>
+  <div class="lg:flex items-center  max-w-full " style="border:1px solid white;">
+    <Box v-for="skill in skills" :key="skill.title">
+      <template #front>
+        <p class="text-2xl font-sans font-bold justify-center align-middle py-20">{{ skill.title }}</p> 
+      </template>
+      <template #right>
+        <div class="flex flex-col  gap-3 place-items-start px-4 py-2 my-1" >
+          <li v-for="item in skill.items" :key="item">{{item}}</li>
+        </div>
+      </template>
+    </Box>
+  </div>
 
 
 </main>
@@ -70,12 +35,31 @@
 <script setup lang="ts">
   import {ref} from 'vue';
   import Box from 'smyld-lib-3d/src/components/Box.vue'
-
   import CardPicAction from '../components/CardPicAction.vue';
-  
-   
   const searchQuery = ref('')  
   const infoText = "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
+  const skills = [
+    {
+      title: 'Front End',
+      items:[
+        'Vue',
+        'React',
+        'Angular',
+        'HTML5,css,tailwind'
+      ]
+    },
+    {
+      title: 'Languages',
+      items:[
+        'Java',
+        'Typescript',
+        'Javascript',
+        'Pyton',
+        'C++'
+      ]
+    },
+
+  ]
 
 </script>
 <style scoped>
