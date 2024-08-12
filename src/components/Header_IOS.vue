@@ -1,8 +1,8 @@
 <template>
     <header class="top-0 bg-weather-primary z-50 block sticky backdrop-saturate-200 backdrop-blur-2xl w-full max-w-full"
-    :style="`position: -webkit-sticky;height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`"
+   
     >
-    <nav class="text-white block">
+    <nav class="text-black block">
       TEST
     </nav> 
     </header>
