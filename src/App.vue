@@ -26,11 +26,8 @@
 
 */
 import { RouterView } from 'vue-router';
-import SiteNavigation from './components/SiteNavigation.vue';
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
-import Header_IOS from './components/Header_IOS.vue'
-import TestApp from './components/TestApp.vue'
 
 import { ref } from 'vue';
 const menu = ref([
