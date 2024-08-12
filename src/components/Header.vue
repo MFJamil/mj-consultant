@@ -1,11 +1,9 @@
 <template>
     <header class="top-0 bg-weather-primary z-50 block sticky backdrop-saturate-200 backdrop-blur-2xl w-full max-w-full"
     :style="`position: -webkit-sticky;height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`"
-    >ttt
+    >
     <nav class="text-black block">
-      PPP
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        OOO
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img :src="iconFile" class="h-12" alt="Flowbite Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" 
@@ -41,7 +39,7 @@
         </div>
       </div>
     </nav>
-    <span>is Mobile ......{{ isMobile }}</span>
+    
 </header>
      </template>
      
@@ -97,7 +95,7 @@
             }
 
         };
-        window.addEventListener("scroll", (event) => {handleScrolling();});
+        //window.addEventListener("scroll", (event) => {handleScrolling();});
 
     </script>
     
