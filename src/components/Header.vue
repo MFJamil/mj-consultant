@@ -1,5 +1,5 @@
 <template>
-    <header class="top-0 bg-weather-primary z-50 sticky"
+    <header class="top-0 bg-weather-primary z-50 sticky block"
     :style="`height: ${navHeight}px !important;background-color:rgba(255,255,255,${opacity}) !important;box-shadow: 0 10px 15px -3px rgb(0 0 0 / ${shadowOp}), 0 4px 6px -4px rgb(0 0 0 / ${shadowOp});`"
     >
     <nav class="text-black">
