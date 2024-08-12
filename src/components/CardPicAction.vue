@@ -10,7 +10,7 @@
     
             
     <div class="p-6 text-surface dark:text-white">
-        <h5 class="mb-2 lg:text-5xl text-3xl font-medium leading-tight text-black">{{ title }}</h5>
+        <h5 class="mb-2 lg:text-5xl font-extrabold font-sans text-3xl text-black">{{ title }}</h5>
         <p class="mb-4 font-bold text-gray-500 text-lg">
             {{text}}
         </p>
