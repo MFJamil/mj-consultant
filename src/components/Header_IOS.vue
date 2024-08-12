@@ -1,6 +1,9 @@
 <template>
     <nav class="text-white block">
-      TEST
+      <div class="container mx-auto flex items-center justify-between">
+        TEST
+      </div>
+      
     </nav> 
 
 <!--
