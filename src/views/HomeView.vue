@@ -29,31 +29,39 @@
 
     <CardPicAction 
       :picture="{fileName: 'assets/MJ_2.png',height:'20vw'}" title="IT Consultant" :text="infoText" />
-    
-      <Box>
+
+
+   <div class="flex place-content-center w-full max-w-full">
+   <Box>
     <template #front>
-      <p class="text-2xl font-sans font-bold py-10">Front End</p> 
+      <p class="text-2xl font-sans font-bold justify-center align-middle py-20">Front End</p> 
     </template>
     <template #right>
-      <div class="flex items-center gap-3 place-items-center" >
-        <img src="../assets/Logo_MJ_shadow_white.png" class="size-30" >
+      <div class="flex flex-col  gap-3 place-items-start px-4 py-3 my-4" >
+        <li>Vue</li>
+        <li>React</li>
+        <li>Angular</li>
+        <li>HTML5,css,tailwind</li>
       </div>
     </template>
-
   </Box>
 
   <Box>
-      <template #front>
-        <div class="w-full" >
-          <img src="../assets/MJ_1.jpg" class="rounded-3xl w-fit" />
-        </div>
+    <template #front>
+      <p class="text-2xl font-sans font-bold justify-center align-middle py-20">Languages</p> 
     </template>
     <template #right>
-      <div class="flex items-center gap-3" >
-        <img src="../assets/Logo_2.png" class="size-24" >
+      <div class="flex flex-col  gap-3 place-items-start px-4 py-3 my-2" >
+        <li>Java</li>
+        <li>Typescript</li>
+        <li>Javascript</li>
+        <li>Python</li>
+        <li>C++</li>
       </div>
     </template>
   </Box>
+
+    </div>
 
 
 </main>
