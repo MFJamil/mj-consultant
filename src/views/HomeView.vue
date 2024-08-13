@@ -3,7 +3,7 @@
   <main class="container text-white mainBody">
 
   
-  <div class="container w-full flex py-20 bg-white rounded-3xl" >
+  <div class="w-full py-20 bg-white rounded-3xl flex justify-center" >
     <span class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</span>
     <!--
     <div class="flex justify-end" >
@@ -14,7 +14,7 @@
 
 
     <CardPicAction 
-      :picture="{fileName: 'assets/MJ_2.png',height:'40vw'}" title="Welcome" :text="infoText" />
+      :picture="{fileName: 'assets/MJ_2.png',height:'50vh',width:'35vw'}" title="Welcome" :text="infoText" />
 
 
   <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center" >
