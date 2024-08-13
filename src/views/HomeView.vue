@@ -17,17 +17,17 @@
       :picture="{fileName: 'assets/MJ_2.png',height:'40vw'}" title="Welcome" :text="infoText" />
 
 
-  <div class="lg:flex flex-1 items-center  max-w-full " >
-    <Box v-for="skill in skills" :key="skill.title">
+  <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center" >
+    <Qube v-for="skill in skills" :key="skill.title" :openLink="false" class="my-10">
       <template #front>
         <p class="text-2xl font-sans font-bold justify-center align-middle py-20">{{ skill.title }}</p> 
       </template>
       <template #right>
-        <div class="flex flex-col  gap-3 place-items-start px-4 py-2 my-1" >
+        <div class="flex flex-col  gap-3 place-items-start px-4 py-1 my-1" >
           <li v-for="item in skill.items" :key="item">{{item}}</li>
         </div>
       </template>
-    </Box>
+    </Qube>
   </div>
 
 
@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
   import {ref} from 'vue';
-  import Box from 'smyld-lib-3d/src/components/Box.vue'
+  import Qube from 'smyld-lib-3d/src/components/Qube.vue'
   import CardPicAction from '../components/CardPicAction.vue';
   const searchQuery = ref('')  
   const infoText = "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
@@ -47,9 +47,20 @@
         'Vue',
         'React',
         'Angular',
-        'HTML5,css,tailwind'
+        'HTML5,css,tailwind',
+        'Swing,ThemeLeaf'
       ]
     },
+    {
+      title: 'Back End',
+      items:[
+        'Spring Boot',
+        'Node JS',
+        'Hibernate',
+        'Servlet/REST APIs',
+      ]
+    },
+
     {
       title: 'Languages',
       items:[
@@ -58,6 +69,26 @@
         'Javascript',
         'Pyton',
         'C++'
+      ]
+    },
+    {
+      title: 'Testing',
+      items:[
+        'JUnit',
+        'Cypress',
+        'Selenium',
+        'Jest',
+        'Mockito'
+      ]
+    },
+    {
+      title: 'Build Tools',
+      items:[
+        'Maven',
+        'Npm',
+        'CI/CD',
+        'Jenkins',
+        'Docker'
       ]
     },
 

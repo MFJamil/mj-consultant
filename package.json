@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "pinia": "^2.1.7",
-    "smyld-lib-3d": "^1.0.44",
+    "smyld-lib-3d": "^1.0.45",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },

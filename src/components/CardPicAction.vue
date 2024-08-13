@@ -5,7 +5,7 @@
         <img
             :class="`rounded-t-lg size-fit m-auto opacity-${props.picture.opacity!=undefined?props.picture.opacity:50}`"
             :src="picture.fileName"
-            :style="`height: ${picture.height};`"
+            :style="`height: ${picture.height};width: ${picture.width};`"
 
             alt="" />
     
