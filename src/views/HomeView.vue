@@ -14,7 +14,7 @@
 
 
     <CardPicAction 
-      :picture="{fileName: 'assets/MJ_2.png',height:'50vh',width:'35vw'}" title="Welcome" :text="infoText" />
+      :picture="{fileName: 'assets/MJ_2.png',height:'50vh',width:'40vw'}" title="Welcome" :text="infoText" />
 
 
   <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center" >
