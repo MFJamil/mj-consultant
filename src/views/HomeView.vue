@@ -12,7 +12,7 @@
   </div>
 
   <CardPicAction 
-      :picture="{fileName: info.picture,height:'50vh',width:'30vw'}" title="Welcome" :text="infoText" />
+      :picture="{fileName: info.picture,height:'30vh',width:'20vw'}" title="Welcome" :text="infoText" />
 
 
   <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center" >
@@ -44,6 +44,7 @@
   const searchQuery = ref('')  
   const infoText = "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
   const info = ref(info_2009);
+
   
   const skills = [
     {
