@@ -16,8 +16,8 @@
       />
   </section>
   <section class="page" id="skills">
-  <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center" >
-    <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" class="my-10">
+  <div class="lg:flex items-center w-full h-auto block flex-wrap justify-center" >
+    <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" class="my-5">
       <template #front>
         <p class="text-2xl font-sans font-bold justify-center align-middle py-20 text-blue-900">{{ skill.title }}</p> 
       </template>
@@ -30,7 +30,7 @@
   </div>
 </section>
 
-  <contact-info />
+  <ContactInfo />
 
 
 </main>
@@ -42,6 +42,7 @@
   import CardPicAction from '../components/CardPicAction.vue';
   import info_current from '../data/info_current.json'
   import info_2009 from '../data/info_2009_2020.json'
+  import ContactInfo from '../components/ContactInfo.vue'
   
   const searchQuery = ref('')  
   const infoText = "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
@@ -130,11 +131,13 @@
     }
 }
 .page{
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  margin-top: 30px;
+  
   
 }
 
