@@ -9,7 +9,7 @@
   -->
   <div class="flex flex-col min-h-screen font-Roboto">
     <Header :menu="menu" title="MJ Consultant" icon-file="assets/Logo_MJ_shadow_white.png" /> 
-    <div class="flex flex-col min-h-screen font-Roboto my-60">
+    <div class="flex flex-col min-h-screen font-Roboto my-20">
       <RouterView />
 
     </div>
@@ -31,10 +31,11 @@ import Header from './components/Header.vue'
 
 import { ref } from 'vue';
 const menu = ref([
-  {id: 'mnu_Info', title: 'Info'},
-  {id: 'mnu_Kontakt', title: 'Kontakt'},
-  {id: 'mnu_skills', title: 'Skills'},
-  {id: 'mnu_projects', title: 'Projects',selected: true},
+  {id: 'start', title: 'Start',selected: true},
+  {id: 'info', title: 'Info'},
+  {id: 'skills', title: 'Skills'},
+  {id: 'kontakt', title: 'Kontakt'},
+  
 ]);
 </script>
 <style >

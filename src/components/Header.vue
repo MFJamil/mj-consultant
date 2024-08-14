@@ -23,7 +23,7 @@
             id="navbar-default-mobile" :style="`background-color:rgba(255,255,255,${opacity})`" v-show="showMenu">
           <ul class="font-medium flex flex-col p-4 sm:p-0 mt-4 border border-gray-100 rounded-lg sm:flex-row sm:space-x-8 rtl:space-x-reverse sm:mt-0 sm:border-0 ">
             <li v-for="item in menu" :key="item.id">
-              <a :style="`color:rgb(${tc},${tc},${tc})`" href="#" :class="`${menuClasses} ${item.selected?'bg-blue-700':''}`" aria-current="page" @click="showMenu=false">{{ item.title }}</a>
+              <a :style="`color:rgb(${tc},${tc},${tc})`" :href="`#${item.id}`" :class="`${menuClasses} ${item.selected?'bg-blue-700':''}`" aria-current="page" @click="showMenu=false">{{ item.title }}</a>
             </li>
           </ul>
         </div>
@@ -33,7 +33,8 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-default" >
           <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li v-for="item in menu" :key="item.id">
-              <a href="#" 
+              <a 
+                :href="`#${item.id}`"
                 :class="`${menuClasses} ${item.selected?'bg-blue-700 ':''}`" 
                 :style="`color:rgb(${tc},${tc},${tc})`" aria-current="page">{{ item.title }}</a>
             </li>

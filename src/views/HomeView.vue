@@ -2,19 +2,20 @@
 <template>
   <main class="container text-white mainBody">
 
-  
-  <div class="w-full py-20 bg-white rounded-3xl flex flex-col justify-center items-center" >
-    
-    <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
-    
-    <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
-  
-  </div>
+  <section class="page" id="start">
+    <div class="w-full py-20 bg-white rounded-3xl flex flex-col justify-center items-center" >
+      <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
+      <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
+    </div>
+  </section>
 
-  <CardPicAction 
-      :picture="{fileName: info.picture,height:'300px',width:'200px'}" title="Welcome" :text="infoText" />
-
-
+  <section class="page" id="info">
+  <CardPicAction class="my-60"
+      :picture="{fileName: info.picture,height:'300px',width:'200px'}" title="Welcome" :text="infoText" 
+      
+      />
+  </section>
+  <section class="page" id="skills">
   <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center" >
     <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" class="my-10">
       <template #front>
@@ -27,6 +28,7 @@
       </template>
     </Qube>
   </div>
+</section>
 
   <contact-info />
 
@@ -126,6 +128,14 @@
     100%{
         background-position: 0% 0%;
     }
+}
+.page{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  
 }
 
 </style>
