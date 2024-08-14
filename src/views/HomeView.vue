@@ -4,7 +4,7 @@
 
   
   <div class="w-full py-20 bg-white rounded-3xl flex justify-center" >
-    <span class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</span>
+    <span class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack IT Consultant</span>
     <!--
     <div class="flex justify-end" >
       <img src="../assets/MJ_2.png" class="rounded-3xl size-1/2 opacity-50" />
@@ -14,13 +14,13 @@
 
 
     <CardPicAction 
-      :picture="{fileName: 'assets/MJ_2.png',height:'50vh',width:'40vw'}" title="Welcome" :text="infoText" />
+      :picture="{fileName: 'assets/MJ_2.png',height:'50vh',width:'30vw'}" title="Welcome" :text="infoText" />
 
 
   <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center" >
     <Qube v-for="skill in skills" :key="skill.title" :openLink="false" class="my-10">
       <template #front>
-        <p class="text-2xl font-sans font-bold justify-center align-middle py-20">{{ skill.title }}</p> 
+        <p class="text-2xl font-sans font-bold justify-center align-middle py-20 text-blue-900">{{ skill.title }}</p> 
       </template>
       <template #right>
         <div class="flex flex-col  gap-3 place-items-start px-4 py-1 my-1" >
@@ -30,6 +30,8 @@
     </Qube>
   </div>
 
+  <contact-info />
+
 
 </main>
 </template>
@@ -38,6 +40,7 @@
   import {ref} from 'vue';
   import Qube from 'smyld-lib-3d/src/components/Qube.vue'
   import CardPicAction from '../components/CardPicAction.vue';
+  
   const searchQuery = ref('')  
   const infoText = "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
   const skills = [
