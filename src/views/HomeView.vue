@@ -14,11 +14,11 @@
 
 
     <CardPicAction 
-      :picture="{fileName: 'assets/MJ_2.png',height:'50vh',width:'30vw'}" title="Welcome" :text="infoText" />
+      :picture="{fileName: info.picture,height:'50vh',width:'30vw'}" title="Welcome" :text="infoText" />
 
 
   <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center" >
-    <Qube v-for="skill in skills" :key="skill.title" :openLink="false" class="my-10">
+    <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" class="my-10">
       <template #front>
         <p class="text-2xl font-sans font-bold justify-center align-middle py-20 text-blue-900">{{ skill.title }}</p> 
       </template>
@@ -40,9 +40,13 @@
   import {ref} from 'vue';
   import Qube from 'smyld-lib-3d/src/components/Qube.vue'
   import CardPicAction from '../components/CardPicAction.vue';
+  import info_current from '../data/info_current.json'
+  import info_2009 from '../data/info_2009_2020.json'
   
   const searchQuery = ref('')  
   const infoText = "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
+  const info = ref(info_2009);
+  
   const skills = [
     {
       title: 'Front End',

@@ -1,0 +1,55 @@
+{
+    "time": "2020-now",
+    "picture": "assets/MJ_2.png",
+    "skills": [
+        {
+            "title": "Front End",
+            "items": [
+                "Vue",
+                "React",
+                "Angular",
+                "HTML5,css,tailwind",
+                "Swing,ThemeLeaf"
+            ]
+        },
+        {
+            "title": "Back End",
+            "items": [
+                "Spring Boot",
+                "Node JS",
+                "Hibernate",
+                "Servlet/REST APIs"
+            ]
+        },
+        {
+            "title": "Languages",
+            "items": [
+                "Java",
+                "Typescript",
+                "Javascript",
+                "Pyton",
+                "C++"
+            ]
+        },
+        {
+            "title": "Testing",
+            "items": [
+                "JUnit",
+                "Cypress",
+                "Selenium",
+                "Jest",
+                "Mockito"
+            ]
+        },
+        {
+            "title": "Build Tools",
+            "items": [
+                "Maven",
+                "Npm",
+                "CI/CD",
+                "Jenkins",
+                "Docker"
+            ]
+        }
+    ]
+}
