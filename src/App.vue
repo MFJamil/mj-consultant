@@ -35,6 +35,8 @@ const menu = ref([
   {id: 'info', title: 'Info'},
   {id: 'skills', title: 'Skills'},
   {id: 'kontakt', title: 'Kontakt'},
+  {id: 'impressum', title: 'Impressum'},
+  {id: 'datenschutz', title: 'Datenschutz'},
   
 ]);
 </script>
