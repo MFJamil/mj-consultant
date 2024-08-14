@@ -3,17 +3,15 @@
   <main class="container text-white mainBody">
 
   
-  <div class="w-full py-20 bg-white rounded-3xl flex justify-center" >
-    <span class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack IT Consultant</span>
-    <!--
-    <div class="flex justify-end" >
-      <img src="../assets/MJ_2.png" class="rounded-3xl size-1/2 opacity-50" />
-    </div>
-    -->
-    </div>
+  <div class="w-full py-20 bg-white rounded-3xl flex flex-col justify-center items-center" >
+    
+    <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
+    
+    <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
+  
+  </div>
 
-
-    <CardPicAction 
+  <CardPicAction 
       :picture="{fileName: info.picture,height:'50vh',width:'30vw'}" title="Welcome" :text="infoText" />
 
 
