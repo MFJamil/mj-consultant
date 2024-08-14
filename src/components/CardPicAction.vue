@@ -5,7 +5,7 @@
         <img
             :class="`rounded-t-lg size-fit m-auto opacity-${props.picture.opacity!=undefined?props.picture.opacity:50}`"
             :src="picture.fileName"
-            :style="`height: ${picture.height};width: ${picture.width};`"
+            :style="`height: auto;max-width: ${picture.width};`"
 
             alt="" />
     
@@ -17,7 +17,7 @@
         </p>
         <!--
         <button
-
+:style="`height: ${picture.height};width: ${picture.width};`"
         type="button"
         class="text-black inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal  shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
         data-twe-ripple-init
