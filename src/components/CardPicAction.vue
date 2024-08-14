@@ -3,10 +3,9 @@
         class="rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark place-items-center lg:flex my-20">
     
         <img
-            :class="`rounded-t-lg size-fit m-auto opacity-${props.picture.opacity!=undefined?props.picture.opacity:50}`"
+            :class="`rounded-t-lg size-fit m-auto`"
             :src="picture.fileName"
-            :style="`height: auto;max-width: ${picture.width};`"
-
+            :style="`height: auto;max-width: ${picture.width};opacity:${props.picture.opacity!=undefined?props.picture.opacity:0.5} !important;`"
             alt="" />
     
             
