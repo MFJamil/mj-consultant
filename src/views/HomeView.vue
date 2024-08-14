@@ -12,7 +12,7 @@
   </div>
 
   <CardPicAction 
-      :picture="{fileName: info.picture,height:'30vh',width:'20vw'}" title="Welcome" :text="infoText" />
+      :picture="{fileName: info.picture,height:'300px',width:'200px'}" title="Welcome" :text="infoText" />
 
 
   <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center" >
