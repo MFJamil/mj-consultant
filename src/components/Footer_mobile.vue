@@ -6,39 +6,35 @@
 -->
   <div class="w-full max-w-full backdrop-saturate-200 backdrop-blur-2xl flex flex-wrap items-center justify-between mx-auto relative py-3">
     
-    <div class="container text-white mainBody h-auto flex  justify-center items-start my-2" >
+    <div class="container text-white mainBody h-auto justify-center flex flex-row items-center my-2" >
       <!--  Sitemap   -->
-      <div class="container text-white h-max justify-center flex flex-col my-0 py-0 items-center">
-        <h2 class="mb-2 text-lg font-semibold text-white text-left">Contact</h2>
+      <div class="container text-white mainBody h-auto justify-center flex flex-col my-10" style="width:40vw;">
+        <h2 class="mb-2 text-lg font-semibold text-white">Sitemap</h2>
         <ul class="max-w-md space-y-1  list-disc list-inside ">
-          Mohammed Jamil <br />
-          Walpodenstr.10 <br />
-          55116, Mainz <br />
-          +49 15209511152<br />
-          info@mj-consultant.de<br /> 
-           <br />
-
-
-        </ul>
-      </div>
-      <!--     -->
-      <div class="container text-white h-max justify-center flex flex-col my-0  py-0 items-center">
-        <h2 class="mb-2 text-lg font-semibold text-white text-left">{{siteMap.title}}</h2>
-        <ul class="max-w-md space-y-1  list-disc list-inside ">
-            <li v-for="item in siteMap.items" :key="item.title" >{{ item.title }}
+            <li v-for="item in siteMapItems" :key="item.title" >{{ item.title }}
                 
             </li>
         </ul>
       </div>
       <!--     -->
-      <div class="container text-white h-max justify-center flex flex-col my-0 py-0 items-center">
-        <h2 class="mb-2 text-lg font-semibold text-white text-left">{{about.title}}</h2>
+      <div class="container text-white mainBody h-auto justify-center flex flex-col my-10" style="width:40vw;">
+        <h2 class="mb-2 text-lg font-semibold text-white">Sitemap</h2>
         <ul class="max-w-md space-y-1  list-disc list-inside ">
-            <li v-for="item in about.items" :key="item.title" >{{ item.title }}
+            <li v-for="item in siteMapItems" :key="item.title" >{{ item.title }}
                 
             </li>
         </ul>
       </div>
+      <!--     
+      <div class="container text-white mainBody h-auto justify-center flex flex-col my-10" style="width:40vw;">
+        <h2 class="mb-2 text-lg font-semibold text-white">Sitemap</h2>
+        <ul class="max-w-md space-y-1  list-disc list-inside ">
+            <li v-for="item in siteMapItems" :key="item.title" >{{ item.title }}
+                
+            </li>
+        </ul>
+      </div>
+      -->
 
     </div>
     <div class="container text-white mainBody h-auto" >
@@ -60,15 +56,32 @@
 </template>
 <script lang="ts">
 export default {
-    name: 'Footer'
+    name: 'Footer_Mobile'
 }
 </script>
 
 <script lang="ts" setup>
  import Divider from './Divider.vue';
- import siteMap from '../data/en/sitemap.json';
- import about from '../data/en/About.json';
- </script>
+ const siteMapItems = [
+  {
+    title: 'Start',
+    link: '#'
+  },
+  {
+    title: 'Info',
+    link: 'info'
+  },
+  {
+    title: 'Skills',
+    link: 'skills'
+  },
+  {
+    title: 'Kontakt',
+    link: 'kontakt'
+  },
+
+ ];
+</script>
 
 <style scoped>
 #footerContainer{

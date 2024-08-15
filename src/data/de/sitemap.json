@@ -1,0 +1,23 @@
+{
+    "title": "Sitemap",
+    "items":
+    [
+        {
+        "title": "Start",
+        "link": "#"
+        },
+        {
+        "title": "Info",
+        "link": "info"
+        },
+        {
+        "title": "Skills",
+        "link": "skills"
+        },
+        {
+        "title": "Kontakt",
+        "link": "kontakt"
+        }
+
+    ]
+}

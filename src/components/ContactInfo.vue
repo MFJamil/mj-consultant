@@ -1,6 +1,10 @@
  <template>
-    <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center bg-white text-black" >
-        <span>Contact Info</span>
+   
+    <div class="container flex items-center w-full h-auto  justify-center bg-white text-black rounded-2xl py-10" >
+        
+        <img src="../assets/icon-mobile.png" />
+        
+        <img src="../assets/icon-email.png" />
     </div>
  </template>
  

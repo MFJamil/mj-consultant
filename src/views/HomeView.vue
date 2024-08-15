@@ -13,14 +13,14 @@
       <CardPicAction class="my-60"
         :picture="{fileName: info.picture,height:'300px',width:'200px'}" title="Welcome" :text="infoText" />
     </section>
-    <section class="page" id="skills">
+    <section class="page gap-5" id="skills">
       <div class="lg:flex items-center w-full h-auto block flex-wrap justify-center" >
         <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" class="my-5">
           <template #front>
             <p class="text-2xl font-sans font-bold justify-center align-middle py-20 text-blue-900">{{ skill.title }}</p> 
           </template>
           <template #right>
-            <div class="flex flex-col  gap-3 place-items-start px-4 py-1 my-1" >
+            <div class="flex flex-col gap-1 place-items-start px-4 py-1 my-1" >
               <li v-for="item in skill.items" :key="item">{{item}}</li>
             </div>
           </template>
@@ -38,8 +38,8 @@
   import {ref} from 'vue';
   import Qube from 'smyld-lib-3d/src/components/Qube.vue'
   import CardPicAction from '../components/CardPicAction.vue';
-  import info_current from '../data/info_current.json'
-  import info_2009 from '../data/info_2009_2020.json'
+  import info_current from '../data/en/info_current.json'
+  import info_2009 from '../data/en/info_2009_2020.json'
   import ContactInfo from '../components/ContactInfo.vue'
   
   const searchQuery = ref('')  
