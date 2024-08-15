@@ -1,39 +1,37 @@
 
 <template>
-  <main class="container text-white mainBody">
+  <main class="container text-white mainBody h-auto" id="start">
 
-  <section class="page" id="start">
-    <div class="w-full py-20 bg-white rounded-3xl flex flex-col justify-center items-center" >
-      <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
-      <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
-    </div>
-  </section>
+    <section class="page" >
+      <div class="w-full py-20 bg-white rounded-3xl flex flex-col justify-center items-center" >
+        <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
+        <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
+      </div>
+    </section>
 
-  <section class="page" id="info">
-  <CardPicAction class="my-60"
-      :picture="{fileName: info.picture,height:'300px',width:'200px'}" title="Welcome" :text="infoText" 
-      
-      />
-  </section>
-  <section class="page" id="skills">
-  <div class="lg:flex items-center w-full h-auto block flex-wrap justify-center" >
-    <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" class="my-5">
-      <template #front>
-        <p class="text-2xl font-sans font-bold justify-center align-middle py-20 text-blue-900">{{ skill.title }}</p> 
-      </template>
-      <template #right>
-        <div class="flex flex-col  gap-3 place-items-start px-4 py-1 my-1" >
-          <li v-for="item in skill.items" :key="item">{{item}}</li>
-        </div>
-      </template>
-    </Qube>
-  </div>
-</section>
+    <section class="page" id="info">
+      <CardPicAction class="my-60"
+        :picture="{fileName: info.picture,height:'300px',width:'200px'}" title="Welcome" :text="infoText" />
+    </section>
+    <section class="page" id="skills">
+      <div class="lg:flex items-center w-full h-auto block flex-wrap justify-center" >
+        <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" class="my-5">
+          <template #front>
+            <p class="text-2xl font-sans font-bold justify-center align-middle py-20 text-blue-900">{{ skill.title }}</p> 
+          </template>
+          <template #right>
+            <div class="flex flex-col  gap-3 place-items-start px-4 py-1 my-1" >
+              <li v-for="item in skill.items" :key="item">{{item}}</li>
+            </div>
+          </template>
+        </Qube>
+      </div>
+    </section>
+    <section class="page" id="kontakt">
+      <ContactInfo />
+    </section>
 
-  <ContactInfo />
-
-
-</main>
+  </main>
 </template>
 
 <script setup lang="ts">

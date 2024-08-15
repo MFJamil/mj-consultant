@@ -31,7 +31,7 @@ import Header from './components/Header.vue'
 
 import { ref } from 'vue';
 const menu = ref([
-  {id: 'start', title: 'Start',selected: true},
+  {id: '', title: 'Start',selected: true},
   {id: 'info', title: 'Info'},
   {id: 'skills', title: 'Skills'},
   {id: 'kontakt', title: 'Kontakt'},

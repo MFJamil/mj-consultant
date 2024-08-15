@@ -1,5 +1,5 @@
  <template>
-    <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center bg-white" >
+    <div class="container lg:flex items-center w-full h-auto block flex-wrap justify-center bg-white text-black" >
         <span>Contact Info</span>
     </div>
  </template>

@@ -90,7 +90,7 @@
         const handleScrolling=()=>{
             console.log(window.scrollY);
             let scrollVal = window.scrollY - NAV_END_EXPAND; 
-            if (window.scrollY>0){
+            if (window.scrollY>=0){
                 navHeight.value = scrollVal>=0?NAV_HEIGHT_MIN:
                     NAV_HEIGHT_MAX-(navDiff*(window.scrollY/NAV_END_EXPAND));
                 opacity.value = (NAV_HEIGHT_MAX-navHeight.value)/OP_END_EXPAND;
