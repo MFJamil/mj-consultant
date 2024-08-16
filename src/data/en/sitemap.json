@@ -4,19 +4,19 @@
     [
         {
         "title": "Start",
-        "link": "#"
+        "action": "#"
         },
         {
         "title": "Info",
-        "link": "info"
+        "action": "info"
         },
         {
         "title": "Skills",
-        "link": "skills"
+        "action": "skills"
         },
         {
         "title": "Kontakt",
-        "link": "kontakt"
+        "action": "kontakt"
         }
 
     ]

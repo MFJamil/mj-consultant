@@ -13,7 +13,9 @@
       <RouterView />
 
     </div>
-    <Footer />
+    
+    <Footer_Mobile  v-if="isMobile"/>
+    <Footer  v-else/>
   </div>
   
 </template>
@@ -27,9 +29,12 @@
 */
 import { RouterView } from 'vue-router';
 import Footer from './components/Footer.vue'
+import Footer_Mobile from './components/Footer_mobile.vue'
 import Header from './components/Header.vue'
-
 import { ref } from 'vue';
+import {onMobile} from "./utils/BrowserUtils";
+const isMobile = ref(onMobile());
+
 const menu = ref([
   {id: '', title: 'Start',selected: true},
   {id: 'info', title: 'Info'},

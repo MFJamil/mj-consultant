@@ -1,8 +1,9 @@
 export interface MenuItem {
-    id:string;
+    id?:string;
     title: string;
     icon?:string;
     selected?:boolean;
+    action?:string;
 
 }
 

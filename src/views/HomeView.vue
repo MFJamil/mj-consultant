@@ -30,7 +30,7 @@
     <section class="page" id="kontakt">
       <ContactInfo />
     </section>
-
+    
   </main>
 </template>
 
