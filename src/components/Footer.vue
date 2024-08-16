@@ -8,21 +8,21 @@
     
     <div class="container text-white mainBody h-auto flex  justify-center items-start my-2" >
       <!--  Sitemap   -->
-      <div class="container text-white h-max justify-center flex flex-col my-0 py-0 items-center">
-        <h2 class="mb-2 text-lg font-semibold text-white text-left">Contact</h2>
+      <div class="container text-white h-max justify-center flex flex-col my-0 py-0 items-start">
+        <h2 class="mb-2 text-lg font-semibold text-white text-left w-max">Contact</h2>
         <ul class="max-w-md space-y-1  list-disc list-inside ">
           Mohammed Jamil <br />
           Walpodenstr.10 <br />
           55116, Mainz <br />
-          +49 15209511152<br />
-          info@mj-consultant.de<br /> 
-           <br />
+          <div class="flex flex-row gap-2"><img src="../assets/icon_mobile_24.png"> <span>+49 15209511152</span></div>
+          <div class="flex flex-row gap-2"><img src="../assets/icon_email_24.png"> <span>info@mj-consultant.de</span></div><br />
+           
 
 
         </ul>
       </div>
       <!--     -->
-      <div class="container text-white h-max justify-center flex flex-col my-0  py-0 items-center">
+      <div class="container text-white h-max justify-center flex flex-col my-0 py-0 items-start">
         <h2 class="mb-2 text-lg font-semibold text-white text-left">{{siteMap.title}}</h2>
         <ul class="max-w-md space-y-1  list-disc list-inside ">
             <li v-for="item in siteMap.items" :key="item.title" >{{ item.title }}
@@ -31,7 +31,7 @@
         </ul>
       </div>
       <!--     -->
-      <div class="container text-white h-max justify-center flex flex-col my-0 py-0 items-center">
+      <div class="container text-white h-max justify-center flex flex-col my-0 py-0 items-start">
         <h2 class="mb-2 text-lg font-semibold text-white text-left">{{about.title}}</h2>
         <ul class="max-w-md space-y-1  list-disc list-inside ">
             <li v-for="item in about.items" :key="item.title" >{{ item.title }}
