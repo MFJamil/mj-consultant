@@ -7,7 +7,7 @@
         :style="`top: ${topLoc}px !important;`"
       >
         <div class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img :src="iconFile" class="h-12" alt="MJ Logo" />
+            <!--img :src="iconFile" class="h-12" alt="MJ Logo" /-->
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" 
             :style="`color:rgb(${tc},${tc},${tc})`"
             >{{title}}</span>

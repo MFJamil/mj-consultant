@@ -4,11 +4,11 @@
     [
         {
         "title": "Datenschutz",
-        "link": "#"
+        "action": "datenschutz"
         },
         {
         "title": "Impressum",
-        "link": "info"
+        "action": "impressum"
         }
 
 

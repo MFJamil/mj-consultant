@@ -12,12 +12,23 @@
             Mohammed Jamil <br />
             Walpodenstr.10 <br />
             55116, Mainz <br />
-            <div class="flex flex-row gap-2"><img src="../assets/icon_mobile_24.png"> <span>+49 15209511152</span></div>
-            <div class="flex flex-row gap-2"><img src="../assets/icon_email_24.png"> <span>info@mj-consultant.de</span></div><br />
+            <div class="flex flex-row gap-2">
+            <a href="tel:015209511152">
+              <img src="../assets/icon_mobile_24.png"> 
+            </a>
+            <span>+49 15209511152</span>
+            
+            </div>
+          <div class="flex flex-row gap-2">
+            <a href="mailto:info@mj-consultant.de">
+              <img src="../assets/icon_email_24.png">
+            </a>
+            <span>info@mj-consultant.de</span>
+          </div>
           </template>
         </Accordion>
-        <Accordion :items="siteMap.items" :title="siteMap.title" />
-        <Accordion :items="about.items" :title="about.title" />
+        <Accordion :items="siteMap.items" :title="siteMap.title" @action="handleAction"/>
+        <Accordion :items="about.items" :title="about.title" @action="handleAction" />
       </div>
       <div class="container text-white mainBody h-auto" >
         
@@ -27,8 +38,8 @@
           <br />
           <div class="flex items-center space-x-3 rtl:space-x-reverse text-white text-sm">
 
-            <img src="../assets/xing-logo-2447.svg" style="width: 20px;" />
-            <img src="../assets/linkedin-logo-2430.svg" style="width: 20px;" />
+            <a href="https://www.xing.com/profile/Mohammed_Jamil2/web_profiles"><img src="../assets/xing-logo-2447.svg" style="width: 20px;" /></a>
+            <a href="https://www.linkedin.com/in/dipl-ing-m-jamil-b2532562/"><img src="../assets/linkedin-logo-2430.svg" style="width: 20px;" /></a>
           </div>
   
         </div>
@@ -48,6 +59,18 @@
    import about from '../data/en/About.json';
    import SimpleList from './SimpleList.vue';
    import Accordion from './Accordion.vue';
+   
+  const handleAction=(action:string)=>{
+    console.log("Got Action : " + action);
+    if (action === '#') window.scrollTo(0,0);
+    else if ((action!== 'impressum')&&(action!== 'datenschutz')){
+      let top = document?.getElementById(action)?.offsetTop; //Getting Y of target element
+      if (top!==undefined) window.scrollTo(0, top);   
+    }else{
+       // Code for handlig the impressum and datenschutz
+    }
+  }
+
    </script>
   
   <style scoped>

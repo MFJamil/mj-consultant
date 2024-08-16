@@ -3,7 +3,7 @@
 <div id="accordion-collapse" data-accordion="collapse">
   <h2 id="accordion-collapse-heading-3">
     <button type="button" 
-        :class="`flex focus:text-black items-center justify-between w-full p-5 font-medium rtl:text-right text-white border border-gray-200 focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 ${roundedTop?'rounded-t-xl':''}`" 
+        :class="`flex focus:ring-1 focus:ring-gray-200 focus:text-black items-center justify-between w-full p-5 font-medium rtl:text-right text-white border border-gray-200  dark:focus:ring-gray-800 dark:border-gray-700 hover:bg-gray-100 gap-3 ${roundedTop?'rounded-t-xl':''}`" 
         data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3"
         @click="showContents=!showContents"
         >

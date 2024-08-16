@@ -14,7 +14,7 @@
 
     </div>
     
-    <Footer_Mobile  v-if="isMobile"/>
+    <Footer_Mobile v-if="isMobile" />
     <Footer  v-else/>
   </div>
   
