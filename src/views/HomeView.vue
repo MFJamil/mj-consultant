@@ -13,9 +13,11 @@
       <CardPicAction class="my-60"
         :picture="{fileName: info.picture,height:'300px',width:'200px'}" title="Welcome" :text="infoText" />
     </section>
+
+
     <section class="page gap-5" id="skills">
-      <div class="lg:flex items-center w-full h-auto block flex-wrap justify-center" >
-        <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" class="my-5">
+      <div :class="`${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} flex w-full h-auto justify-center items-center`" >
+        <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" settings="width:300;" class="my-5 mx-4">
           <template #front>
             <p class="text-2xl font-sans font-bold justify-center align-middle py-20 text-blue-900">{{ skill.title }}</p> 
           </template>
@@ -41,7 +43,11 @@
   import info_current from '../data/en/info_current.json'
   import info_2009 from '../data/en/info_2009_2020.json'
   import ContactInfo from '../components/ContactInfo.vue'
+  import {onMobile} from "../utils/BrowserUtils";
+import type { viewDepthKey } from 'vue-router';
   
+  const isMobile = ref(onMobile());
+
   const searchQuery = ref('')  
   const infoText = "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
   const info = ref(info_2009);
