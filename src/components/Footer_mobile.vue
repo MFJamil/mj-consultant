@@ -20,13 +20,13 @@
         <Accordion :items="about.items" :title="about.title" />
       </div>
       <div class="container text-white mainBody h-auto" >
-        <Divider class="w-full"/>
-        <div class="w-full max-w-full backdrop-saturate-200 backdrop-blur-2xl flex flex-wrap items-center justify-between mx-auto relative">
+        
+        <div class="w-full max-w-full flex flex-col items-center justify-center mx-auto">
+          <div><img src="../assets/Logo_MJ_shadow_white.png" class="h-12" alt="MJ Logo" /></div>
+          <div class="space-x-3 rtl:space-x-reverse text-white text-xs" >&copy; MJ Consultant<span>, August 2024</span></div>
+          <br />
           <div class="flex items-center space-x-3 rtl:space-x-reverse text-white text-sm">
-            <div><img src="../assets/Logo_MJ_shadow_white.png" class="h-12" alt="MJ Logo" /></div>
-            <div>&copy; MJ Consultant<span>, August 2024</span></div>
-          </div>
-          <div class="flex items-center space-x-3 rtl:space-x-reverse text-white text-sm">
+
             <img src="../assets/xing-logo-2447.svg" style="width: 20px;" />
             <img src="../assets/linkedin-logo-2430.svg" style="width: 20px;" />
           </div>
