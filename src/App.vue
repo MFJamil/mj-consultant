@@ -8,7 +8,8 @@
     
     <Footer_Mobile v-if="isMobile" @action="handleAction"/>
     <Footer @action="handleAction"  v-else/>
-    <impressum v-show="showImpressum" :class="`absolute top-full -translate-y-full`" @doClose="showImpressum=false" />
+    <impressum :class="(showImpressum?'showAtBottom':'hideAtBottom') + ' duration-1000'" 
+      @doClose="showImpressum=false"> </impressum>
   </div>
   
 </template>
@@ -44,6 +45,18 @@ const menu = ref([
   
 ]);
 </script>
-<style >
+<style scoped>
+  .hideAtBottom{
+    position:fixed;
+    top: 102%;
+    width:100%;
+    opacity:0;
+  }
+  .showAtBottom{
+    position:fixed;
+    top: 0;
+    width:100%;
+    opacity: 1;
+  }
 
 </style>
