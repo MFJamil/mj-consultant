@@ -9,5 +9,21 @@ body{
     background-attachment: fixed;    
     
 }
-
-
+h1
+ {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 15px;
+}
+h2
+ {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+p{
+    padding: 15px;
+}
+a{
+    color: blue;
+}

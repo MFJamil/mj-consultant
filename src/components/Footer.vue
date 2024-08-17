@@ -27,8 +27,8 @@
           </div>
         </template>
       </SimpleList>
-      <SimpleList :items="siteMap.items" :title="siteMap.title" @action="handleAction"/>
-      <SimpleList :items="about.items" :title="about.title" @action="handleAction"/>
+      <SimpleList :items="siteMap.items" :title="siteMap.title" @action="(item) => $emit('action',item)"/>
+      <SimpleList :items="about.items" :title="about.title" @action="(item) => $emit('action',item)"/>
     </div>
     <div class="container text-white mainBody h-auto" >
       <Divider class="w-full"/>
@@ -48,25 +48,15 @@
   </div>
 </template>
 <script lang="ts">
-export default {
-    name: 'Footer'
-}
+  export default {
+      name: 'Footer'
+  }
 </script>
-
 <script lang="ts" setup>
  import Divider from './Divider.vue';
  import siteMap from '../data/en/sitemap.json';
  import about from '../data/en/About.json';
  import SimpleList from './SimpleList.vue';
- const handleAction=(action:string)=>{
-    console.log("Got Action : " + action);
-    if (action === '#') window.scrollTo(0,0);
-    if ((action!== 'impressum')&&(action!== 'datenschutz')){
-      let top = document?.getElementById(action)?.offsetTop; //Getting Y of target element
-      if (top!==undefined) window.scrollTo(0, top);   
-    }
-
-}
 
  </script>
 
