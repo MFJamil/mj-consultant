@@ -1,9 +1,12 @@
  <template>
 
-<div id="accordion-collapse" data-accordion="collapse">
-  <h2 id="accordion-collapse-heading-3">
+<div data-accordion="collapse">
+  <div>
     <button type="button" 
-        :class="`flex focus:ring-1 focus:ring-gray-200 focus:text-black items-center justify-between w-full p-5 font-medium rtl:text-right text-white border border-gray-200  dark:focus:ring-gray-800 dark:border-gray-700 hover:bg-gray-100 gap-3 ${roundedTop?'rounded-t-xl':''}`" 
+        :class="`flex items-center justify-between w-full p-5 font-medium gap-3
+        focus:ring-1 focus:ring-gray-200 focus:text-black bg-none focus:bg-white  
+        border border-gray-200 dark:border-gray-700
+        rtl:text-right text-white dark:focus:ring-gray-800 ${roundedTop?'rounded-t-xl':''}`" 
         data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3"
         @click="showContents=!showContents"
         >
@@ -12,10 +15,10 @@
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5 5 1 9 5"/>
       </svg>
     </button>
-  </h2>
-  <div id="accordion-collapse-body-3" :class="`${(showContents?'visible bottom-10':'hidden')} transition duration-700 ease-in-out`" aria-labelledby="accordion-collapse-heading-3">
-    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-        <ul class="max-w-md space-y-1  list-disc list-inside ">
+  </div>
+  <div :class="`${(showContents?'visible':'hidden')} duration-700 ease-in-out`" aria-labelledby="accordion-collapse-heading-3">
+    <div class="p-5 border w-full border-t-0  dark:border-gray-700">
+        <ul class="">
             <template v-if="items.length>0">
                 <li v-for="item in items" 
                     :class="(item.action||item.id)?'cursor-pointer hover:text-green-500':''"
