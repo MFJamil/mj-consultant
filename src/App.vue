@@ -8,8 +8,10 @@
     
     <Footer_Mobile v-if="isMobile" @action="handleAction"/>
     <Footer @action="handleAction"  v-else/>
-    <impressum :class="(showImpressum?'showAtBottom':'hideAtBottom') + ' duration-1000'" 
-      @doClose="showImpressum=false"> </impressum>
+
+    <impressum @doClose="showImpressum=false" :doShow="showImpressum"> </impressum>
+    <DatenSchutz @doClose="showDatenSchutz=false" :doShow="showDatenSchutz"> </DatenSchutz>
+
   </div>
   
 </template>
@@ -18,11 +20,13 @@ import { RouterView } from 'vue-router';
 import Footer from './components/Footer.vue'
 import Footer_Mobile from './components/Footer_mobile.vue'
 import Impressum from './components/Impressum.vue'
+import DatenSchutz from './components/DatenSchutz.vue'
 import Header from './components/Header.vue'
 import { ref } from 'vue';
 import {onMobile} from "./utils/BrowserUtils";
 const isMobile = ref(onMobile());
 const showImpressum = ref(false);
+const showDatenSchutz = ref(false);
 
 const handleAction=(action:string)=>{
     console.log("Got Action : " + action);
@@ -32,6 +36,7 @@ const handleAction=(action:string)=>{
       if (top!==undefined) window.scrollTo(0, top);   
     }else{
       if (action==='impressum') showImpressum.value = true;
+      if (action==='datenschutz') showDatenSchutz.value = true;
     }
 
 }
@@ -46,17 +51,5 @@ const menu = ref([
 ]);
 </script>
 <style scoped>
-  .hideAtBottom{
-    position:fixed;
-    top: 102%;
-    width:100%;
-    opacity:0;
-  }
-  .showAtBottom{
-    position:fixed;
-    top: 0;
-    width:100%;
-    opacity: 1;
-  }
 
 </style>
