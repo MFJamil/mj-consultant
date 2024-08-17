@@ -1,6 +1,9 @@
+@import url('primeicons/primeicons.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 body{
     background-image: url(./Bg_2_1980.jpg) !important;

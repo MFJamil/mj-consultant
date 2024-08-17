@@ -44,7 +44,7 @@ import type { MenuItem } from '../model/MenuItem';
 import{type PropType, ref} from 'vue'
 
 const showContents = ref(false);
-const delay = ref(700)
+const delay = ref('500')
 const props = defineProps({
     items: {
         type: Array as PropType<MenuItem[]>,

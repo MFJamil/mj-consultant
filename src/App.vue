@@ -8,7 +8,7 @@
     
     <Footer_Mobile v-if="isMobile" @action="handleAction"/>
     <Footer @action="handleAction"  v-else/>
-    <impressum v-show="showImpressum" :style="(showImpressum?'bottom:100vh;':'bottom:-100vh;')" />
+    <impressum v-show="showImpressum" :class="`absolute top-full -translate-y-full`" @doClose="showImpressum=false" />
   </div>
   
 </template>

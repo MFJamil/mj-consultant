@@ -1,5 +1,8 @@
  <template>
-    <div class="bg-white  opacity-100 z-50 absolute rounded-3xl">
+    <div class="bg-white opacity-100 z-50 absolute rounded-3xl overflow-hidden ring-white ring-2">
+        <div class="w-full bg-blue-400 h-10">
+            <li class="right-5 top-3 absolute pi pi-times font-bold cursor-pointer hover:text-white" @click="$emit('doClose')"></li> 
+        </div>
         <h1>Impressum</h1>
         <p>Mohammed Jamil<br />
             Walpodenstr, 10<br />
