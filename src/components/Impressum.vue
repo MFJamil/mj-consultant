@@ -3,7 +3,7 @@
         <div class="w-full bg-blue-400 h-10">
             <li class="right-5 top-3 absolute pi pi-times font-bold cursor-pointer hover:text-white" @click="$emit('doClose')"></li> 
         </div>
-        <div class="overflow-auto h-96">
+        <div class="overflow-auto h-screen">
         <h1>Impressum</h1>
         <p>Mohammed Jamil<br />
             Walpodenstr, 10<br />
