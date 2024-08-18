@@ -1,13 +1,13 @@
 {
-    "title": "About",
+    "title": "mnu_about",
     "items":
     [
         {
-        "title": "Datenschutz",
+        "title": "mnu_datasecurity",
         "action": "datenschutz"
         },
         {
-        "title": "Impressum",
+        "title": "mnu_legalnotice",
         "action": "impressum"
         }
 

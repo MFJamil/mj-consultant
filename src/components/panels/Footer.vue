@@ -2,7 +2,7 @@
   <div class="w-full max-w-full backdrop-saturate-200 backdrop-blur-2xl flex flex-wrap items-center justify-between mx-auto relative py-3">
     
     <div class="container text-white h-auto flex justify-center items-start my-2" >
-      <SimpleList title="Contact" >
+      <SimpleList :title="Fields.mnu_contact" >
         <template #content>
           Mohammed Jamil <br />
           Walpodenstr.10 <br />
@@ -51,9 +51,13 @@
 </script>
 <script lang="ts" setup>
  import Divider from '../Divider.vue';
+ import {ref} from 'vue';
  import siteMap from '../../data/en/sitemap.json';
  import about from '../../data/en/About.json';
  import SimpleList from '../SimpleList.vue';
+ import translator from '../../utils/Translator';
+ import { Fields } from '../../utils/Fields';
+ const tr = ref(translator);
 
  </script>
 

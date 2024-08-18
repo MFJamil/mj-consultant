@@ -10,7 +10,7 @@
         data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3"
         @click="showContents=!showContents"
         >
-      <span>{{ title }}</span>
+      <span>{{ tr.t(title) }}</span>
       <svg  data-accordion-icon :class="`${!showContents?'rotate-180':''} w-3 h-3 shrink-0 duration-${delay}`" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5 5 1 9 5"/>
       </svg>
@@ -24,7 +24,7 @@
                     :class="(item.action||item.id)?'cursor-pointer hover:text-green-500':''"
                     :key="item.title" 
                     @click="$emit('action',item.action?item.action:item.id)" 
-                >{{ item.title }}</li>
+                >{{ tr.t(item.title) }}</li>
             </template>
             <slot name="content" />
             </ul>
@@ -42,6 +42,9 @@
 <script lang="ts" setup>
 import type { MenuItem } from '../model/MenuItem';
 import{type PropType, ref} from 'vue'
+import { Fields } from '../utils/Fields';
+import translator from '../utils/Translator';
+const tr = ref(translator);
 
 const showContents = ref(false);
 const delay = ref('500')

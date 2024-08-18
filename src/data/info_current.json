@@ -1,6 +1,6 @@
 {
     "time": "2020-now",
-    "picture": "../assets/images/mj_2020.png",
+    "picture": "assets/mj_2020.png",
     "skills": [
         {
             "title": "Front End",

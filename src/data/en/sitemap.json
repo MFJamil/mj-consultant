@@ -1,21 +1,21 @@
 {
-    "title": "Sitemap",
+    "title": "mnu_sitemap",
     "items":
     [
         {
-        "title": "Start",
+        "title": "mnu_start",
         "action": "#"
         },
         {
-        "title": "Info",
+        "title": "mnu_info",
         "action": "info"
         },
         {
-        "title": "Skills",
+        "title": "mnu_skills",
         "action": "skills"
         },
         {
-        "title": "Contant",
+        "title": "mnu_contact",
         "action": "kontakt"
         }
 
