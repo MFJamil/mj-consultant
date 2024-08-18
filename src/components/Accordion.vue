@@ -11,12 +11,12 @@
         @click="showContents=!showContents"
         >
       <span>{{ tr.t(title) }}</span>
-      <svg  data-accordion-icon :class="`${!showContents?'rotate-180':''} w-3 h-3 shrink-0 duration-${delay}`" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <svg  data-accordion-icon :class="`${!showContents?'rotate-180':''} w-3 h-3 shrink-0 duration-${animate}`" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5 5 1 9 5"/>
       </svg>
     </button>
   </div>
-  <div :class="`${(showContents?'opacity-100 visible h-auto':'opacity-0 invisible h-0')} transition-opacity ease-in-out delay-50 duration-${delay}`" aria-labelledby="accordion-collapse-heading-3">
+  <div :class="`${(showContents?'opacity-100 visible h-auto':'opacity-0 invisible h-0')} transition-opacity ease-in-out delay-50 duration-${animate}`" aria-labelledby="accordion-collapse-heading-3">
     <div class="p-5 border w-full border-t-0  dark:border-gray-700">
         <ul class="">
             <template v-if="items.length>0">
@@ -42,12 +42,11 @@
 <script lang="ts" setup>
 import type { MenuItem } from '../model/MenuItem';
 import{type PropType, ref} from 'vue'
-import { Fields } from '../utils/Fields';
 import translator from '../utils/Translator';
 const tr = ref(translator);
 
 const showContents = ref(false);
-const delay = ref('500')
+const animate = ref('500')
 const props = defineProps({
     items: {
         type: Array as PropType<MenuItem[]>,
