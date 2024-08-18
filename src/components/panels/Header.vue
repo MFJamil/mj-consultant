@@ -27,9 +27,6 @@
             </li>
           </ul>
         </div>
-
-
-
         <div class="hidden w-full md:block md:w-auto" id="navbar-default" >
           <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li v-for="item in menu" :key="item.id">
@@ -42,69 +39,76 @@
         </div>
       </div>
     </nav>
+  </header>
+  <!--pi pi-arrow-circle-up-->
+  <div class="fixed right-0 bottom-5  w-10 text-white z-50" v-show="showScrollingButton"  >
+    <img src="../../assets/images/up-arrows.png" class="w-6 h-6 cursor-pointer" @click="doScrollToStart" />
+  </div>
+  
+</template>
+<script lang="ts">
+  export default {
+      name: 'Header'
+  }
+</script>
+<script lang="ts" setup>
+  import type{MenuItem}  from '../../model/MenuItem';
+  import { ref, type PropType } from 'vue';
+  import {onMobile} from "../../utils/BrowserUtils";
+  import translator from '../../utils/Translator';
+  const tr = ref(translator);
+  const isMobile = ref(onMobile());
+  const menuClasses = ref('block py-2 px-3 rounded bg-transparent sm:p-0');
+  const props = defineProps({
+      menu:{
+          type: Array as PropType<MenuItem[]>,
+          defult:[]
+      },
+      title: String,
+
+      iconFile: String
+  })
+  const showMenu = ref(!isMobile.value);
+  const PC_NAV_HEIGHT_MAX = 150;
+  const PC_NAV_HEIGHT_MIN = 80;
+  const MO_NAV_HEIGHT_MAX = 90;
+  const MO_NAV_HEIGHT_MIN = 65;
+
+  const NAV_HEIGHT_MAX =  isMobile.value?MO_NAV_HEIGHT_MAX:PC_NAV_HEIGHT_MAX;
+  const NAV_HEIGHT_MIN = isMobile.value?MO_NAV_HEIGHT_MIN:PC_NAV_HEIGHT_MIN;
+  const NAV_END_EXPAND = 450;
+  const OP_END_EXPAND = 30;
+
+
+  let navDiff = NAV_HEIGHT_MAX - NAV_HEIGHT_MIN;
+
+
+  const showScrollingButton = ref(false);
+  const navHeight = ref(NAV_HEIGHT_MAX);
+  const opacity = ref(0);
+  const shadowOp = ref(0);
+  const tc = ref(255);
+  const topLoc = ref(NAV_HEIGHT_MAX-NAV_HEIGHT_MAX/2-20)
+  const handleScrolling=()=>{
+      console.log("scroll : " + window.scrollY  + " , Height: " + screen.height);
+      let scrollVal = window.scrollY - NAV_END_EXPAND; 
+      if (window.scrollY>=0){
+          navHeight.value = scrollVal>=0?NAV_HEIGHT_MIN:
+              NAV_HEIGHT_MAX-(navDiff*(window.scrollY/NAV_END_EXPAND));
+          opacity.value = (NAV_HEIGHT_MAX-navHeight.value)/OP_END_EXPAND;
+          shadowOp.value = opacity.value/10;
+          tc.value = 255 - ((NAV_HEIGHT_MAX-navHeight.value)/navDiff)*255;
+          topLoc.value = navHeight.value/2-20;
+      }
+      showScrollingButton.value = window.scrollY>=screen.height;
+  };
+  const doScrollToStart  = () =>{
+    window.scrollTo(0,0);
+    showScrollingButton.value = false;
+  };
+
+
+  window.addEventListener("scroll", (event) => {handleScrolling();});
+
+</script>
     
-</header>
-     </template>
-     
-     <script lang="ts">
-        export default {
-            name: 'Header'
-        }
-    </script>
-    <script lang="ts" setup>
-        import type{MenuItem}  from '../../model/MenuItem';
-        import { ref, type PropType } from 'vue';
-        import {onMobile} from "../../utils/BrowserUtils";
-        import translator from '../../utils/Translator';
-        const tr = ref(translator);
-        const isMobile = ref(onMobile());
-        const menuClasses = ref('block py-2 px-3 rounded bg-transparent sm:p-0');
-        const props = defineProps({
-            menu:{
-                type: Array as PropType<MenuItem[]>,
-                defult:[]
-            },
-            title: String,
-
-            iconFile: String
-        })
-        const showMenu = ref(!isMobile.value);
-        const PC_NAV_HEIGHT_MAX = 150;
-        const PC_NAV_HEIGHT_MIN = 80;
-        const MO_NAV_HEIGHT_MAX = 90;
-        const MO_NAV_HEIGHT_MIN = 65;
-
-        const NAV_HEIGHT_MAX =  isMobile.value?MO_NAV_HEIGHT_MAX:PC_NAV_HEIGHT_MAX;
-        const NAV_HEIGHT_MIN = isMobile.value?MO_NAV_HEIGHT_MIN:PC_NAV_HEIGHT_MIN;
-        const NAV_END_EXPAND = 450;
-        const OP_END_EXPAND = 30;
-
-
-        let navDiff = NAV_HEIGHT_MAX - NAV_HEIGHT_MIN;
-
-
-        const modalActive = ref(false);
-        const navHeight = ref(NAV_HEIGHT_MAX);
-        const opacity = ref(0);
-        const shadowOp = ref(0);
-        const tc = ref(255);
-        const topLoc = ref(NAV_HEIGHT_MAX-NAV_HEIGHT_MAX/2-20)
-        const handleScrolling=()=>{
-            //console.log(window.scrollY);
-            let scrollVal = window.scrollY - NAV_END_EXPAND; 
-            if (window.scrollY>=0){
-                navHeight.value = scrollVal>=0?NAV_HEIGHT_MIN:
-                    NAV_HEIGHT_MAX-(navDiff*(window.scrollY/NAV_END_EXPAND));
-                opacity.value = (NAV_HEIGHT_MAX-navHeight.value)/OP_END_EXPAND;
-                shadowOp.value = opacity.value/10;
-                tc.value = 255 - ((NAV_HEIGHT_MAX-navHeight.value)/navDiff)*255;
-                topLoc.value = navHeight.value/2-20;
-            }
-        };
-        window.addEventListener("scroll", (event) => {handleScrolling();});
-
-    </script>
-    
-     <style>
-     
-     </style>
