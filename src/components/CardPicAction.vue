@@ -1,15 +1,18 @@
  <template>
     <div
-        class="rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark place-items-center lg:flex my-20">
-    
-        <img
+        shown="-translate-y-10 duration-2000 opacity-100" 
+        class="rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark place-items-center lg:flex my-20 opacity-0">
+        <div shown="-translate-y-5 duration-2000 opacity-100" class="translate-y-5">
+        <img 
+            
             :class="`rounded-t-lg size-fit m-auto`"
             :src="picture.fileName"
             :style="`height: auto;max-width: ${picture.width};opacity:${props.picture.opacity!=undefined?props.picture.opacity:0.5} !important;`"
             alt="" />
+        </div>
     
             
-    <div class="p-6 text-surface dark:text-white">
+    <div class="p-6 text-surface dark:text-white" shown="-translate-y-10 duration-2000 opacity-100" >
         <h5 class="mb-2 lg:text-5xl font-extrabold font-sans text-3xl text-black">{{ title }}</h5>
         <p class="mb-4 font-bold text-gray-400 text-lg">
             {{text}}

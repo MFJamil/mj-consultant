@@ -3,9 +3,9 @@
   <main class="container text-white mainBody h-auto" id="start">
 
     <section class="page" >
-      <div class="w-full py-20 bg-white rounded-3xl flex flex-col justify-center items-center" >
-        <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
-        <div class="gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
+      <div class="w-full py-20 bg-white rounded-3xl flex flex-col justify-center items-center -translate-y-20" >
+        <div shown="-translate-y-5 duration-2000 opacity-100 scale-100"  class="scale-0 opacity-0 gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
+        <div shown="translate-y-5 duration-2000 opacity-100 scale-100" class="scale-0 opacity-0 gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
       </div>
     </section>
 
@@ -16,7 +16,7 @@
 
 
     <section class="page gap-5" id="skills">
-      <div :class="`${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} flex w-full h-auto justify-center items-center`" >
+      <div :class="`${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} flex w-full h-auto justify-center items-center opacity-0 duration-2000 translate-y-10 scale-0`" shown="scale-100 opacity-100 -translate-y-10"  >
         <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" settings="width:300;" class="my-5 mx-4">
           <template #front>
             <p class="text-2xl font-sans font-bold justify-center align-middle py-20 text-blue-900">{{ skill.title }}</p> 
@@ -92,7 +92,12 @@
   justify-content: center;
   align-content: center;
   margin-top: 30px;
-  
+}
+
+
+.fadeIn{
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 2500;
   
 }
 

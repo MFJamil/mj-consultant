@@ -5,6 +5,9 @@ export default {
   theme: {
     
     extend: {
+      transitionDuration:{
+        '2000': '2000ms',
+      },
       colors: {
         /*
         "weather-primary": "#00668A",
