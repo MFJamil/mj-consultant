@@ -33,7 +33,7 @@
   }
 </script>
 <script lang="ts" setup>
-import SlidePanel from './SlidePanel.vue';
+import SlidePanel from '../SlidePanel.vue';
  </script>
  
  <style>

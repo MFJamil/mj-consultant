@@ -14,14 +14,14 @@
             55116, Mainz <br />
             <div class="flex flex-row gap-2">
             <a href="tel:015209511152">
-              <img src="../assets/icon_mobile_24.png"> 
+              <img src="../../assets/images/icon_mobile_24.png"> 
             </a>
             <span>+49 15209511152</span>
             
             </div>
           <div class="flex flex-row gap-2">
             <a href="mailto:info@mj-consultant.de">
-              <img src="../assets/icon_email_24.png">
+              <img src="../../assets/images/icon_email_24.png">
             </a>
             <span>info@mj-consultant.de</span>
           </div>
@@ -33,13 +33,13 @@
       <div class="container text-white mainBody h-auto" >
         
         <div class="w-full max-w-full flex flex-col items-center justify-center mx-auto">
-          <div><img src="../assets/Logo_MJ_shadow_white.png" class="h-12" alt="MJ Logo" /></div>
+          <div><img src="../../assets/images/Logo_MJ_shadow_white.png" class="h-12" alt="MJ Logo" /></div>
           <div class="space-x-3 rtl:space-x-reverse text-white text-xs" >&copy; MJ Consultant<span>, August 2024</span></div>
           <br />
           <div class="flex items-center space-x-3 rtl:space-x-reverse text-white text-sm">
-
-            <a href="https://www.xing.com/profile/Mohammed_Jamil2/web_profiles"><img src="../assets/xing-logo-2447.svg" style="width: 20px;" /></a>
-            <a href="https://www.linkedin.com/in/dipl-ing-m-jamil-b2532562/"><img src="../assets/linkedin-logo-2430.svg" style="width: 20px;" /></a>
+            <a class="pi pi-globe text-white cursor-pointer" @click="$emit('action','showLangs')" ></a>
+            <a href="https://www.xing.com/profile/Mohammed_Jamil2/web_profiles"><img src="../../assets/images/xing-logo-2447.svg" style="width: 20px;" /></a>
+            <a href="https://www.linkedin.com/in/dipl-ing-m-jamil-b2532562/"><img src="../../assets/images/linkedin-logo-2430.svg" style="width: 20px;" /></a>
           </div>
   
         </div>
@@ -54,11 +54,9 @@
   </script>
   
   <script lang="ts" setup>
-   import Divider from './Divider.vue';
-   import siteMap from '../data/en/sitemap.json';
-   import about from '../data/en/About.json';
-   import SimpleList from './SimpleList.vue';
-   import Accordion from './Accordion.vue';
+   import siteMap from '../../data/en/sitemap.json';
+   import about from '../../data/en/About.json';
+   import Accordion from '../Accordion.vue';
    
 
    </script>

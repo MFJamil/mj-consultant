@@ -1,6 +1,6 @@
 {
     "time": "2020-now",
-    "picture": "assets/MJ_2.png",
+    "picture": "../assets/images/mj_2020.png",
     "skills": [
         {
             "title": "Front End",
@@ -48,7 +48,8 @@
                 "Npm",
                 "CI/CD",
                 "Jenkins",
-                "Docker"
+                "Docker",
+                "CMake"
             ]
         }
     ]

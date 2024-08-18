@@ -7,7 +7,7 @@
         :style="`top: ${topLoc}px !important;`"
       >
         <div class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img :src="iconFile" class="h-12" alt="MJ Logo" />
+            <img src="../../assets/images/Logo_MJ_shadow_white.png" class="h-12" alt="MJ Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" 
             :style="`color:rgb(${tc},${tc},${tc})`"
             >{{title}}</span>
@@ -23,7 +23,7 @@
             id="navbar-default-mobile" :style="`background-color:rgba(255,255,255,${opacity})`" v-show="showMenu">
           <ul class="font-medium flex flex-col p-4 sm:p-0 mt-4 border border-gray-100 rounded-lg sm:flex-row sm:space-x-8 rtl:space-x-reverse sm:mt-0 sm:border-0 ">
             <li v-for="item in menu" :key="item.id">
-              <a :style="`color:rgb(${tc},${tc},${tc})`" :href="`#${item.id}`" :class="`${menuClasses} ${item.selected?'bg-blue-700':''}`" aria-current="page" @click="showMenu=false">{{ item.title }}</a>
+              <a :style="`color:rgb(${tc},${tc},${tc})`" :href="`#${item.id}`" :class="`${menuClasses} ${item.selected?'bg-blue-700':''}`" aria-current="page" @click="showMenu=false">{{ tr.t(item.title) }}</a>
             </li>
           </ul>
         </div>
@@ -36,7 +36,7 @@
               <a 
                 :href="`#${item.id}`"
                 :class="`${menuClasses} ${item.selected?'bg-blue-700 ':''}`" 
-                :style="`color:rgb(${tc},${tc},${tc})`" aria-current="page">{{ item.title }}</a>
+                :style="`color:rgb(${tc},${tc},${tc})`" aria-current="page">{{ tr.t(item.title) }}</a>
             </li>
           </ul>
         </div>
@@ -52,9 +52,11 @@
         }
     </script>
     <script lang="ts" setup>
-        import type{MenuItem}  from '../model/MenuItem';
+        import type{MenuItem}  from '../../model/MenuItem';
         import { ref, type PropType } from 'vue';
-        import {onMobile} from "../utils/BrowserUtils";
+        import {onMobile} from "../../utils/BrowserUtils";
+        import translator from '../../utils/Translator';
+        const tr = ref(translator);
         const isMobile = ref(onMobile());
         const menuClasses = ref('block py-2 px-3 rounded bg-transparent sm:p-0');
         const props = defineProps({

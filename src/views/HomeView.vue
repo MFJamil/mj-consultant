@@ -11,7 +11,7 @@
 
     <section class="page" id="info">
       <CardPicAction class="my-60"
-        :picture="{fileName: info.picture,height:'300px',width:'200px'}" title="Welcome" :text="infoText" />
+        :picture="{fileName: info.picture,height:'300px',width:'200px'}" :title="t.t(Fields.tit_info)" :text="tr.t(Fields.txt_info)" />
     </section>
 
 
@@ -40,73 +40,24 @@
   import {ref} from 'vue';
   import Qube from 'smyld-lib-3d/src/components/Qube.vue'
   import CardPicAction from '../components/CardPicAction.vue';
-  import info_current from '../data/en/info_current.json'
-  import info_2009 from '../data/en/info_2009_2020.json'
-  import ContactInfo from '../components/ContactInfo.vue'
+  import info_current from '../data/info_current.json'
+  import info_2009 from '../data/info_2009_2020.json'
+  import ContactInfo from '../components/panels/ContactInfo.vue'
   import {onMobile} from "../utils/BrowserUtils";
-import type { viewDepthKey } from 'vue-router';
+  
+  import t from '@/utils/Translator';
+  import { Fields } from '@/utils/Fields';
   
   const isMobile = ref(onMobile());
 
   const searchQuery = ref('')  
-  const infoText = "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
-  const info = ref(info_2009);
+  const tr = ref(t);
+  const infoText = t.t(Fields.txt_info); // "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
+  const info = ref(info_current);
+  const infoTitle = ref(t.t(Fields.tit_info));
 
   
-  const skills = [
-    {
-      title: 'Front End',
-      items:[
-        'Vue',
-        'React',
-        'Angular',
-        'HTML5,css,tailwind',
-        'Swing,ThemeLeaf'
-      ]
-    },
-    {
-      title: 'Back End',
-      items:[
-        'Spring Boot',
-        'Node JS',
-        'Hibernate',
-        'Servlet/REST APIs',
-      ]
-    },
-
-    {
-      title: 'Languages',
-      items:[
-        'Java',
-        'Typescript',
-        'Javascript',
-        'Pyton',
-        'C++'
-      ]
-    },
-    {
-      title: 'Testing',
-      items:[
-        'JUnit',
-        'Cypress',
-        'Selenium',
-        'Jest',
-        'Mockito'
-      ]
-    },
-    {
-      title: 'Build Tools',
-      items:[
-        'Maven',
-        'Npm',
-        'CI/CD',
-        'Jenkins',
-        'Docker'
-      ]
-    },
-
-  ]
-
+  
 </script>
 <style scoped>
 

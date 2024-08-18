@@ -3,7 +3,7 @@
     "items":
     [
         {
-        "title": "Start",
+        "title": "Home",
         "link": "#"
         },
         {
@@ -11,7 +11,7 @@
         "link": "info"
         },
         {
-        "title": "Skills",
+        "title": "Fähigkeiten",
         "link": "skills"
         },
         {

@@ -4,7 +4,7 @@
     
         <img
             :class="`rounded-t-lg size-fit m-auto`"
-            :src="picture.fileName"
+            :src="imgUrl"
             :style="`height: auto;max-width: ${picture.width};opacity:${props.picture.opacity!=undefined?props.picture.opacity:0.5} !important;`"
             alt="" />
     
@@ -49,7 +49,13 @@ const props = defineProps({
 
 
 })
+const imgUrl = ref(new URL(props.picture.fileName, import.meta.url).href);
 
+console.log("Original Image  : " + props.picture.fileName)
+console.log("Meta URL : " + import.meta.url)
+console.log("Image URL : " + imgUrl.value)
+console.dir(import.meta.url);
+console.dir(imgUrl.value);
 </script>
  <style>
  

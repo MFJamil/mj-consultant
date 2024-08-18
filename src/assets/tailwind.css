@@ -6,27 +6,83 @@
 
 
 body{
-    background-image: url(./Bg_2_1980.jpg) !important;
+    background-image: url(./images/Bg_2_1980.jpg) !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;    
     
 }
-h1
- {
-  font-size: 30px;
-  font-weight: bold;
-  padding: 15px;
-}
-h2
- {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px;
-}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }  
+  h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h4 {
+    display: block;
+    font-size: 1em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h5 {
+    display: block;
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h6 {
+    display: block;
+    font-size: .67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+
 p{
     padding: 15px;
 }
+
 a{
     color: blue;
+}
+.hideAtBottom{
+  position:fixed;
+  top: 102%;
+  width:100%;
+  opacity:0;
+}
+.showAtBottom{
+  position:fixed;
+  top: 0;
+  width:100%;
+  opacity: 1;
 }
