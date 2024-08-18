@@ -4,7 +4,7 @@
     <div class="container text-white h-auto flex justify-center items-start my-2" >
       <SimpleList :title="Fields.mnu_contact" >
         <template #content>
-          Mohammed Jamil <br />
+          M. Jamil <br />
           Walpodenstr.10 <br />
           55116, Mainz <br />
           <div class="flex flex-row gap-2">

@@ -9,7 +9,7 @@
       <div class="container text-white h-auto flex-col justify-center items-start my-2" >
         <Accordion :title="Fields.mnu_contact" :rounded-top="true" >
           <template #content>
-            Mohammed Jamil <br />
+            M. Jamil <br />
             Walpodenstr.10 <br />
             55116, Mainz <br />
             <div class="flex flex-row gap-2">
