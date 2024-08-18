@@ -52,8 +52,8 @@
 <script lang="ts" setup>
  import Divider from '../Divider.vue';
  import {ref} from 'vue';
- import siteMap from '../../data/en/sitemap.json';
- import about from '../../data/en/About.json';
+ import siteMap from '../../data/sitemap.json';
+ import about from '../../data/About.json';
  import SimpleList from '../SimpleList.vue';
  import translator from '../../utils/Translator';
  import { Fields } from '../../utils/Fields';

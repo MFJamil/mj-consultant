@@ -1,7 +1,7 @@
  <template>
     <!--calc(100vh-15px)-->
     <SlidePanel 
-        :topPos="onMobile()?'70vh':'70vh'" width="100px" height="150px" 
+        :topPos="onMobile()?'70vh':'70vh'" width="100px" height="125px" 
         :roundedHeader="true" :rightPos="onMobile()?'40vw':'10vw'">
         <template #content>
             <div class="flex flex-col justify-center items-center py-5 font-bold ">
@@ -13,10 +13,12 @@
                 :lang="Lang.DE" 
                 :isSelected="t.getCurrentLang()==Lang.DE" 
                 @lang="(lang)=>$emit('lang',lang)" />
+                <!-- Arabic will be activated later
             <LangElement language="Arabisch" 
                 :isSelected="t.getCurrentLang()==Lang.AR" 
                 :lang="Lang.AR" 
                 @lang="(lang)=>$emit('lang',lang)" />
+                -->
             
         </div>
         </template>

@@ -54,8 +54,8 @@
   </script>
   
   <script lang="ts" setup>
-   import siteMap from '../../data/en/sitemap.json';
-   import about from '../../data/en/About.json';
+   import siteMap from '../../data/sitemap.json';
+   import about from '../../data/About.json';
    import Accordion from '../Accordion.vue';
    import translator from '../../utils/Translator';
   import { Fields } from '../../utils/Fields';
