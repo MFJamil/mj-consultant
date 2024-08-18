@@ -1,5 +1,8 @@
 <template>
-  <div class="w-full max-w-full backdrop-saturate-200 backdrop-blur-2xl flex flex-wrap items-center justify-between mx-auto relative py-3">
+  <div 
+    class="w-full max-w-full backdrop-saturate-200 backdrop-blur-2xl flex flex-wrap items-center justify-between mx-auto relative py-3"
+    
+  >
     
     <div class="container text-white h-auto flex justify-center items-start my-2" >
       <SimpleList :title="Fields.mnu_contact" >

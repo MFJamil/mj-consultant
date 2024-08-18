@@ -1,5 +1,7 @@
  <template>
-    <div class="container text-white h-max justify-center flex flex-col my-0 py-0 items-center">
+    <div class="container text-white h-max justify-center flex flex-col my-0 py-0 items-center opacity-0"
+        shown="opacity-100"
+        >
         <div class="text-white h-max justify-center flex flex-col my-0 py-0 items-start">
             <h2 class="mb-2 text-lg font-semibold text-white text-left w-max">{{tr.t(title)}}</h2>
             <ul class="max-w-md space-y-1  list-disc list-inside ">
