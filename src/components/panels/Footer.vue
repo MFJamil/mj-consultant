@@ -38,7 +38,7 @@
         <div class="flex items-center space-x-3 rtl:space-x-reverse text-white text-sm">
           <a class="pi pi-globe text-white cursor-pointer" @click="$emit('action','showLangs')" ></a>
           <a href="https://www.xing.com/profile/Mohammed_Jamil2/web_profiles"><img src="../../assets/images/xing-logo-2447.svg" style="width: 20px;" /></a>
-          <a href="https://www.linkedin.com/in/dipl-ing-m-jamil-b2532562/"><img src="../../assets/images/linkedin-logo-2430.svg" style="width: 20px;" /></a>
+          <a href="https://www.linkedin.com/in/mj-consultant/"><img src="../../assets/images/linkedin-logo-2430.svg" style="width: 20px;" /></a>
           
         </div>
 
