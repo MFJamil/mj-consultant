@@ -1,0 +1,45 @@
+:root {
+    --primary-brand-blue: #005ABC;
+    --primary-brand-green: #B7F9AA;
+    --blue-100: #E9F5FB;
+    --blue-200: #D1DBF7;
+    --blue-300: #97CFED;
+    --blue-400: #54B3E2;
+    --blue-500: #007ABC;
+    --blue-600: #005ABC;
+    --blue-700: #00446E;
+    --blue-800: #00375b;
+
+
+}
+
+#canvas1 {
+    border: 1px solid black;
+    position: relative;
+}
+
+#player{
+    display: none;
+}
+.container{
+    width: 600px;
+    height: 150px;
+    display: block;
+}
+
+.controlContainer{
+    width: 800px;
+    height: 150px;
+    border: 1px solid gray;
+    position: fixed;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    top:700px;
+
+
+}
+
+

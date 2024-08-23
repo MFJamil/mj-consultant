@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SVG Test 1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+ </head>
+ <style>
+    :root {
+        --primary-brand-blue: #005ABC;
+        --primary-brand-green: #B7F9AA;
+        --blue-100: #E9F5FB;
+        --blue-200: #D1DBF7;
+        --blue-300: #97CFED;
+        --blue-400: #54B3E2;
+        --blue-500: #007ABC;
+        --blue-600: #005ABC;
+        --blue-700: #00446E;
+        --blue-800: #00375b;
+
+
+    }
+    .container{
+        width: 600px;
+        height: 150px;
+    }
+ </style>
+ <body>
+    <div class="container">
+
+        <svg height="100%" width="100%" viewBox="0 0 100 100"  preserveAspectRatio="none">
+            <path d="M0 0 L68 0 L68 100 L0 100 Z" style="fill: var(--blue-500);"/>
+            <path d="M68 0 L100 0 L100 100 L68 100 Z" style="fill: var(--primary-brand-green);"/>
+            <!-- Start of drawing the squares from 45% till 95% on 37 sector -->
+            
+            <rect width=".5" height="2" x="46" y="-0.25" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.1;"/>
+            <rect width=".5" height="2" x="46" y="33" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.1;"/>
+            <rect width=".5" height="2" x="46" y="66" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.1;"/>
+            <rect width=".5" height="2" x="46" y="99" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.1;"/>
+
+            
+            <rect width="1" height="4" x="48" y="16" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.2;"/>
+            <rect width="1" height="4" x="48" y="50" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.2;"/>
+            <rect width="1" height="4" x="48" y="82" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.2;"/>
+
+            <rect width="1.5" height="6" x="50" y="-3" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.3;"/>
+            <rect width="1.5" height="6" x="50" y="33" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.3;"/>
+            <rect width="1.5" height="6" x="50" y="66" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.3;"/>
+            <rect width="1.5" height="6" x="50" y="99" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.3;"/>
+
+            <rect width="2" height="8" x="52" y="16" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+            <rect width="2" height="8" x="52" y="50" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+            <rect width="2" height="8" x="52" y="82" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+
+            <rect width="2.5" height="10" x="54" y="-3" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.5;"/>
+            <rect width="2.5" height="10" x="54" y="33" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.5;"/>
+            <rect width="2.5" height="10" x="54" y="66" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.5;"/>
+            <rect width="2.5" height="10" x="54" y="99" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.5;"/>
+
+            <rect width="4" height="16" x="64" y="8" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+            <rect width="4" height="16" x="64" y="42" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+            <rect width="4" height="16" x="64" y="76" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+
+            <!--  Start of the second color  -->
+
+            <rect width="4" height="16" x="68" y="8" style="fill: var(--blue-500);stroke:var(--blue-800);stroke-width:.4;"/>
+            <rect width="4" height="16" x="68" y="42" style="fill: var(--blue-500);stroke:var(--blue-800);stroke-width:.4;"/>
+            <rect width="4" height="16" x="68" y="76" style="fill: var(--blue-500);stroke:var(--blue-800);stroke-width:.4;"/>
+
+            <rect width="4" height="16" x="68" y="-8" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+            
+
+            <rect width="4" height="16" x="68" y="25" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+            <path d="M68 25 L72 25 L72 41 L68 25 Z" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+            <rect width="4" height="16" x="68" y="60" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+            <rect width="4" height="16" x="68" y="93" style="fill: var(--primary-brand-green);stroke:var(--blue-800);stroke-width:.4;"/>
+
+         </svg>
+    </div>
+    
+ </body>
+ </html>

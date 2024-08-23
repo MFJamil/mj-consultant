@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset='utf-8'>
+   
+   <title>Javascript Game</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+   <script type="module">
+    import {dataChange} from './main.js';
+        function check(item){
+            dataChange(item);
+        }
+    
+  </script>
+</head>
+<body>
+    
+    <script type="module" src='./main.js'></script>
+    
+    <div class="container">
+        <canvas id="canvas1" width="800" height="400"></canvas>    
+    </div>
+    
+    
+    
+    <div class="controlContainer">
+        <label for="blockSize">Block Size</label>
+        <input name="blockSize" type="text" value="16" id="blockSize" onchange="check(this);" />
+        <label for="height">Height</label>
+        <input name="height" type="text"  value="800" id="height"/>
+        <label for="width">Width</label>
+        <input name="width" type="text"  value="600" id="width"/>
+
+
+    </div>
+    
+</body>
+</html>
