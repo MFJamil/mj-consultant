@@ -7,9 +7,9 @@
       <div class="w-full py-20 bg-white rounded-3xl flex flex-col justify-center items-center -translate-y-20" >
         <div shown="-translate-y-5 duration-1500 opacity-100 scale-100"  class="scale-0 opacity-0 gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
         <div shown="translate-y-5 duration-1500 opacity-100 scale-100" class="scale-0 opacity-0 gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
-        <div  class="scale-0 opacity-0 rounded-2xl" 
+        <div class="scale-0 opacity-0 rounded-2xl" 
           shown="duration-1500 opacity-100 scale-100" 
-          style="width: 600px;height: auto;">
+          :style="`width: ${isMobile?'40':'20'}%;height: auto;`">
           <img src="../assets/images/under_construction_1.png" />
         </div>
 
