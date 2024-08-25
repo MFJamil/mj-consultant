@@ -15,16 +15,17 @@
 
 #canvas1 {
     border: 1px solid black;
-    position: relative;
+    
 }
 
 #player{
     display: none;
 }
 .container{
-    width: 600px;
-    height: 150px;
-    display: block;
+    width: 1000px;
+    height: 400px;
+    
+    
 }
 
 .controlContainer{

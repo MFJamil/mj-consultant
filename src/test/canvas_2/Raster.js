@@ -1,27 +1,29 @@
 
 export class Raster{
 
-    constructor(context){
-        this.ctx = context;
-        this.width = 800;
-        this.height = 400;
+    constructor(){
     }
 
 
 
 
 
-    draw(){
-        // Total Params
-        const ct = this.ctx;
-        const w = this.width;
-        const h = this.height;
 
+
+    draw(config){
+        console.log("Config: " + JSON.stringify(config,null,2))
+        // Total Params
+        this.ctx = config.ct;
+        const ct = config.ct;
+        
+        const w = config.width;
+        const h = config.height;
+        ct.clearRect(0,0,w,h);
         // Drawing Backgrounds
-        ct.fillStyle = '#005ABC';
+        ct.fillStyle = config.color1;
         ct.fillRect(0, 0, (w * 0.68), h);
 
-        ct.fillStyle = '#B7F9AA';
+        ct.fillStyle = config.color2;
         ct.fillRect((w * 0.68), 0,(w * 0.32), h);
         
        /*
@@ -34,7 +36,7 @@ export class Raster{
         const startDraw = w*0.45;
         const endDraw = w*0.68;
         const blockNr = 16;
-        const blockSize = 12;
+        const blockSize = config.blockSize;
         const startSize = 4;
 
 
@@ -43,8 +45,8 @@ export class Raster{
             ct: ct,
             h: h,
             w: w,
-            fcolor:'#B7F9AA',
-            bcolor:'#005ABC',
+            fcolor:config.color2,
+            bcolor:config.color1,
             startPaint: startDraw,
             endPaint: endDraw,
             blockNr: blockNr,
@@ -57,8 +59,8 @@ export class Raster{
             ct: ct,
             h: h,
             w: w,
-            fcolor:'#005ABC',
-            bcolor:'#B7F9AA',
+            fcolor:config.color1,
+            bcolor:config.color2,
             startPaint: endPoint,
             endPaint: w,
             blockNr: 19,
@@ -66,7 +68,7 @@ export class Raster{
             startSize: blockSize
         }
         this.drawBlock(setting2);
-        ct.fillStyle = '#B7F9AA';
+        ct.fillStyle = config.color2;
         ct.fillRect((w * 0.95), 0,(w * 0.32), h);
 
         // Calculating 
@@ -161,8 +163,8 @@ export class Raster{
 
         while(sx<= set.endPaint){
             let doPaint = true;
-            console.log("X : " + sx);
-            console.log("............................................");
+            //console.log("X : " + sx);
+            //console.log("............................................");
             set.ct.fillStyle = set.bcolor;
             set.ct.fillRect(sx, 0, ss, set.h);
 
@@ -170,9 +172,9 @@ export class Raster{
         
                 if (doPaint){
                     this.drawSquare(set.fcolor,set.bcolor,sx, (sy-(ss/2)) , ss , ss);        
-                    console.log("Painting Qube Size : " + ss );
+                    //console.log("Painting Qube Size : " + ss );
                 }else{
-                    console.log(" --- > Size : " + ss );
+                    //console.log(" --- > Size : " + ss );
                 }
                 
                 sy += set.blockSize;

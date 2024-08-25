@@ -2,17 +2,25 @@ import {Player} from './player.js'
 import { InputHandler } from './input.js';
 import {Raster} from './Raster.js'
 
-window.addEventListener('load',()=>{
-    const canvas = document.getElementById('canvas1');
-    //const parentDiv = canvas.parentElement;
-    //canvas.width = 500;
-    //canvas.height = 500;
+const config = {        };
+const raster = new Raster();
 
-    //console.dir(parentDiv);
+window.addEventListener('load',()=>{
+    const cont = document.getElementById('container');
+    const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
-    
-    const raster = new Raster(ctx);
-    raster.draw();
+    config.ct = ctx;
+    config.color1 = '#005ABC';
+    config.color2 = '#B7F9AA';
+    config.blockSize = 12;
+    console.log("cont.clientWidth : " + cont.clientWidth);
+    console.log("cont.clientHeight : " + cont.clientHeight);
+    canvas.setAttribute('width', cont.clientWidth + "px");
+    canvas.setAttribute('height', cont.clientHeight + "px");
+    config.width = cont.clientWidth;
+    config.height = cont.clientHeight;
+    raster.draw(config);
+
 
 
     /*
@@ -44,7 +52,27 @@ window.addEventListener('load',()=>{
     */
 })
 
-function dataChange(data){
-    console.log("Got Data Change : " + data);
+export function dataChange(data){
+    const cont = document.getElementById('container');
+    const canvas = document.getElementById('canvas1');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0,0,config.width,config.height);
+
+    console.log("Got Data Change : " + data.value);
+    console.dir(data);
+    config[data.name] = data.value;
+    
+    if ((data.name==='width')||(data.name==='height')){
+        canvas.style[data.name] = data.value;
+        canvas.setAttribute('width', config.width + "px");
+        canvas.setAttribute('height', config.height + "px");
+        cont.style.width = config.width + "px";
+        cont.style.height = config.height + "px";
+    
+    }
+    raster.draw(config);
+        
+
+
 }
 

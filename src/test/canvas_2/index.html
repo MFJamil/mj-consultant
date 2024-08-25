@@ -6,31 +6,37 @@
    <title>Javascript Game</title>
    <meta name='viewport' content='width=device-width, initial-scale=1'>
    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-   <script type="module">
-    import {dataChange} from './main.js';
-        function check(item){
-            dataChange(item);
-        }
-    
-  </script>
 </head>
 <body>
-    
+      <script type="module">
+        import { dataChange } from "./main.js";
+        window.dataChange = dataChange;
+      </script>
     <script type="module" src='./main.js'></script>
     
-    <div class="container">
-        <canvas id="canvas1" width="800" height="400"></canvas>    
+    <!--
+    <canvas id="canvas1" width="800" height="400"></canvas>   
+    <div class="container" >
+         
+    </div>
+    -->
+
+
+    <div class="container" id="container" >
+        <canvas id="canvas1"></canvas>            
     </div>
     
     
     
     <div class="controlContainer">
         <label for="blockSize">Block Size</label>
-        <input name="blockSize" type="text" value="16" id="blockSize" onchange="check(this);" />
+        <input name="blockSize" type="number" value="12" id="blockSize" onchange="dataChange(this);" />
         <label for="height">Height</label>
-        <input name="height" type="text"  value="800" id="height"/>
+        <input name="height" type="range" min="50" max="800"  value="400" id="height"  onchange="dataChange(this);"/>
         <label for="width">Width</label>
-        <input name="width" type="text"  value="600" id="width"/>
+        <input name="width" type="range" min="50" max="1200"  value="400" id="width"  onchange="dataChange(this);"/>
+        <input type="color" id="color1" name="color1" value="#005ABC" onchange="dataChange(this);">
+        <input type="color" id="color2" name="color2" value="#B7F9AA" onchange="dataChange(this);">
 
 
     </div>
