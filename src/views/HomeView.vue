@@ -27,7 +27,41 @@
     </section>
 
 
-    <section class="page gap-5" id="skills">
+    <section class="page gap-5" id="skills" >
+      
+      <Carousel  :items= "skillIntervals.map(item=>item.text)" >
+            <template v-for="item in skillIntervals" :key="item.text" #[item.text]>
+              <div 
+                class="w-full bg-white  text-black opacity-100 cursor-pointer"  
+                @click="switchSkills(item)"
+                >
+                <img class="absolute size-24 h-auto opacity-40 translate-x-10" :src="`assets/${item.image}`" />
+                <span class="text-sm z-40">{{ item.text }}</span>
+              </div>
+            </template>
+      </Carousel>
+
+      <!--Carousel  :items= "['2019-Present','2015-2019','2008-2015','2002-2008','1998-2002']" class="border-2">
+            <template #2019-Present>
+              <div class="w-full">
+                <img class="absolute size-24 h-auto opacity-40 translate-x-10" src="../assets/images/mj_2020.png" />
+                <span class="text-sm z-40">2019 - Present</span>
+              </div>
+              
+            </template>
+            <template #2015-2019>
+              <span class="text-sm">2015 - 2019</span>
+            </template>
+            <template #2008-2015>
+              <span class="text-sm">2008 - 2015</span>
+            </template>
+            <template #2002-2008>
+              <span class="text-sm">2002 - 2008</span>
+            </template>
+            <template #1998-2002>
+              <span class="text-sm">1998-2002</span>
+            </template>
+        </Carousel-->
       <div :class="`${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} flex w-full h-auto justify-center items-center opacity-0 duration-1500 translate-y-10 scale-0`" shown="scale-100 opacity-100 -translate-y-10"  >
         <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" settings="width:300;" class="my-5 mx-4">
           <template #front>
@@ -51,6 +85,8 @@
 <script setup lang="ts">
   import {ref} from 'vue';
   import Qube from 'smyld-lib-3d/src/components/Qube.vue'
+  import Carousel from 'smyld-lib-3d/src/components/Carousel.vue'
+
   import CardPicAction from '../components/CardPicAction.vue';
   import info_current from '../data/info_current.json'
   import info_2009 from '../data/info_2009_2020.json'
@@ -59,6 +95,7 @@
   
   import t from '@/utils/Translator';
   import { Fields } from '@/utils/Fields';
+import { isTemplateExpression } from 'typescript';
   
   const isMobile = ref(onMobile());
 
@@ -67,8 +104,39 @@
   const infoText = t.t(Fields.txt_info); // "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
   const info = ref(info_current);
   const infoTitle = ref(t.t(Fields.tit_info));
+  const skillIntervals = [
+    {
+      image: 'mj_2020.png',
+      text: '2019 - Present',
+      data: info_current
+    },
+    {
+      image: 'mj_2010.png',
+      text: '2015 - 2019',
+      data: info_2009
+    },
+    {
+      image: 'mj_2010.png',
+      text: '2008 - 2015',
+      data: info_2009
+    },
+    {
+      image: 'mj_2010.png',
+      text: '2002 - 2008',
+      data: info_2009
+    },
+    {
+      image: 'mj_2010.png',
+      text: '1998 - 2002',
+      data: info_2009
+    },
+    
+  ]
 
-  
+  const switchSkills = (item:any)=>{
+    console.log("New Skills are selected for : " + JSON.stringify(item,null,2))
+    info.value = item.data;
+  }
   
 </script>
 <style scoped>

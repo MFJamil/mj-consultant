@@ -26,12 +26,6 @@ export class Raster{
         ct.fillStyle = config.color2;
         ct.fillRect((w * 0.68), 0,(w * 0.32), h);
         
-       /*
-        ct.fillStyle = '#005ABC';
-        ct.fillRect(0, 0,w , h);
-        */
-
-
         // Block Params
         const startDraw = w*0.45;
         const endDraw = w*0.68;
@@ -75,63 +69,8 @@ export class Raster{
             this.drawBlock(setting2);
         ct.fillStyle = config.color2;
         ct.fillRect((w * 0.95), 0,(w * 0.05), h);
-
-        // Calculating 
-        /*
-        const sizeInc = (blockSize-startSize)/blockNr;
-        console.log(`Total Width :  ${w}, Total height: ${h} \n 
-                     Start Draw : ${startDraw}, End Draw : ${endDraw}\n
-                     Block Nr: ${blockNr}, Block Width : ${blockSize}\n
-                     Size Increase : ${sizeInc}`);
-
-
-        
-        let sx = startDraw;
-        let sy = 0;
-        let ss = startSize;
-        let atTop = true;
-        let doPaint = true;
-
-        while(sx<= endDraw){
-            let doPaint = true;
-            console.log("X : " + sx);
-            console.log("............................................");
-            while(sy<=h){
-                if (doPaint){
-                    this.drawSquare('#B7F9AA','#00375b',(sx-(ss/2)), (sy-(ss/2)) , ss , ss);        
-                    console.log("Painting Qube Size : " + ss );
-                }else{
-                    console.log(" --- > Size : " + ss );
-                }
-                
-                sy += blockSize;
-                doPaint = !doPaint;
-            }
-            ss += sizeInc;
-            sx += blockSize;
-            atTop = !atTop;
-            sy = atTop?0:(blockSize);
-        }
-        */
-        
-        /*
-        this.drawSquare('#B7F9AA','#00375b',st, h/3, 5, 5)
-        this.drawSquare('#B7F9AA','#00375b',st, h/1.2, 5, 5)
-        */
-
-
-
-        /*
-        var grd = ct.createLinearGradient(0, 0, 200, 0);
-        grd.addColorStop(0, "red");
-        grd.addColorStop(1, "white");
-
-        // Fill with gradient
-        ct.fillStyle = grd;
-        ct.fillRect(10, 10, 150, 80);
-        */
-        
     }
+
     drawBorder(color,xPos, yPos, width, height, thickness = 1)
     {
         this.ctx.fillStyle=color;

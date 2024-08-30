@@ -32,23 +32,13 @@
             ]
         },
         {
-            "title": "Testing",
+            "title": "Testing 123",
             "items": [
                 "JUnit",
                 "Cypress",
                 "Selenium",
                 "Jest",
                 "Mockito"
-            ]
-        },
-        {
-            "title": "Build Tools",
-            "items": [
-                "Maven",
-                "Npm",
-                "CI/CD",
-                "Jenkins",
-                "Docker"
             ]
         }
     ]
