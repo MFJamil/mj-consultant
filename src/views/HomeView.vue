@@ -124,7 +124,7 @@ import { isTemplateExpression } from 'typescript';
       data: info_2002
     },
     {
-      image: 'mj_2010.png',
+      image: 'mj_1998.png',
       text: '1998 - 2002',
       data: info_1998
     },
