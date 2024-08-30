@@ -1,5 +1,5 @@
 {
-    "time": "2020-now",
+    "time": "2015-2019",
     "picture": "assets/mj_2020.png",
     "skills": [
         {
@@ -27,29 +27,18 @@
                 "Java",
                 "Typescript",
                 "Javascript",
-                "Python",
+                "Pyton",
                 "C++"
             ]
         },
         {
-            "title": "Testing",
+            "title": "Testing 123",
             "items": [
                 "JUnit",
                 "Cypress",
                 "Selenium",
                 "Jest",
                 "Mockito"
-            ]
-        },
-        {
-            "title": "Build Tools",
-            "items": [
-                "Maven",
-                "Npm",
-                "CI/CD",
-                "Jenkins",
-                "Docker",
-                "CMake"
             ]
         }
     ]

@@ -1,0 +1,45 @@
+{
+    "time": "2008-2015",
+    "picture": "assets/mj_2010.png",
+    "skills": [
+        {
+            "title": "Front End",
+            "items": [
+                "Vue",
+                "React",
+                "Angular",
+                "HTML5,css,tailwind",
+                "Swing,ThemeLeaf"
+            ]
+        },
+        {
+            "title": "Back End",
+            "items": [
+                "Spring Boot",
+                "Node JS",
+                "Hibernate",
+                "Servlet/REST APIs"
+            ]
+        },
+        {
+            "title": "Languages",
+            "items": [
+                "Java",
+                "Typescript",
+                "Javascript",
+                "Pyton",
+                "C++"
+            ]
+        },
+        {
+            "title": "Testing 123",
+            "items": [
+                "JUnit",
+                "Cypress",
+                "Selenium",
+                "Jest",
+                "Mockito"
+            ]
+        }
+    ]
+}

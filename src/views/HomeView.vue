@@ -12,13 +12,7 @@
           :style="`width: ${isMobile?'40':'20'}%;height: auto;`">
           <img src="../assets/images/under_construction_1.png" />
         </div>
-
-        
-           
-        
-        />
       </div>
-      
     </section>
 
     <section class="page" id="info">
@@ -32,7 +26,7 @@
       <Carousel  :items= "skillIntervals.map(item=>item.text)" >
             <template v-for="item in skillIntervals" :key="item.text" #[item.text]>
               <div 
-                class="w-full bg-white  text-black opacity-100 cursor-pointer"  
+                class="w-full bg-white text-black opacity-100 cursor-pointer"  
                 @click="switchSkills(item)"
                 >
                 <img class="absolute size-24 h-auto opacity-40 translate-x-10" :src="`assets/${item.image}`" />
@@ -88,8 +82,12 @@
   import Carousel from 'smyld-lib-3d/src/components/Carousel.vue'
 
   import CardPicAction from '../components/CardPicAction.vue';
-  import info_current from '../data/info_current.json'
-  import info_2009 from '../data/info_2009_2020.json'
+  import info_present from '../data/info_present.json'
+  import info_2015 from '../data/info_2015_2019.json'
+  import info_2008 from '../data/info_2008_2015.json'
+  import info_2002 from '../data/info_2002_2008.json'
+  import info_1998 from '../data/info_1998_2002.json'
+
   import ContactInfo from '../components/panels/ContactInfo.vue'
   import {onMobile} from "../utils/BrowserUtils";
   
@@ -102,33 +100,33 @@ import { isTemplateExpression } from 'typescript';
   const searchQuery = ref('')  
   const tr = ref(t);
   const infoText = t.t(Fields.txt_info); // "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
-  const info = ref(info_current);
+  const info = ref(info_present);
   const infoTitle = ref(t.t(Fields.tit_info));
   const skillIntervals = [
     {
-      image: 'mj_2020.png',
+      image: 'mj_present.png',
       text: '2019 - Present',
-      data: info_current
+      data: info_present
     },
     {
-      image: 'mj_2010.png',
+      image: 'mj_2020.png',
       text: '2015 - 2019',
-      data: info_2009
+      data: info_2015
     },
     {
       image: 'mj_2010.png',
       text: '2008 - 2015',
-      data: info_2009
+      data: info_2008
     },
     {
-      image: 'mj_2010.png',
+      image: 'mj_2004.png',
       text: '2002 - 2008',
-      data: info_2009
+      data: info_2002
     },
     {
       image: 'mj_2010.png',
       text: '1998 - 2002',
-      data: info_2009
+      data: info_1998
     },
     
   ]

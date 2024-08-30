@@ -2,7 +2,7 @@
     <div
         shown="-translate-y-10 duration-1500 opacity-100" 
         class="rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark place-items-center lg:flex my-20 opacity-0">
-        <div shown="-translate-y-5 duration-1500 opacity-100" class="translate-y-5">
+        <div shown="-translate-y-15 duration-1500 opacity-100" class="translate-y-0">
         <img 
             
             :class="`rounded-t-lg size-fit m-auto`"
