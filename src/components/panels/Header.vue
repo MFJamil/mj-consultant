@@ -90,7 +90,7 @@
   const tc = ref(255);
   const topLoc = ref(NAV_HEIGHT_MAX-NAV_HEIGHT_MAX/2-20)
   const handleScrolling=()=>{
-      console.log("scroll : " + window.scrollY  + " , Height: " + screen.height);
+      //console.log("scroll : " + window.scrollY  + " , Height: " + screen.height);
       let scrollVal = window.scrollY - NAV_END_EXPAND; 
       if (window.scrollY>=0){
           navHeight.value = scrollVal>=0?NAV_HEIGHT_MIN:

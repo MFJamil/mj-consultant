@@ -17,7 +17,7 @@
 
     <section class="page" id="info">
       <CardPicAction class="my-60"
-        :picture="{fileName: info.picture,height:'300px',width:'200px'}" :title="t.t(Fields.tit_info)" :text="tr.t(Fields.txt_info)" />
+        :picture="{fileName: info.picture,height:'300px',width:'200px'}" :title="tr.t(Fields.tit_info)" :text="tr.t(Fields.txt_info)" />
     </section>
 
 
@@ -93,15 +93,12 @@
   
   import t from '@/utils/Translator';
   import { Fields } from '@/utils/Fields';
-import { isTemplateExpression } from 'typescript';
+
   
   const isMobile = ref(onMobile());
-
-  const searchQuery = ref('')  
   const tr = ref(t);
-  const infoText = t.t(Fields.txt_info); // "I'm M.Jamil, a passionate developer based in Germany. Here, you'll get a glimpse of my journey in the world of development, where creativity meets functionality."
   const info = ref(info_present);
-  const infoTitle = ref(t.t(Fields.tit_info));
+  
   const skillIntervals = [
     {
       image: 'mj_present.png',
@@ -124,7 +121,7 @@ import { isTemplateExpression } from 'typescript';
       data: info_2002
     },
     {
-      image: 'mj_1998.png',
+      image: 'mj_1998_new.png',
       text: '1998 - 2002',
       data: info_1998
     },
