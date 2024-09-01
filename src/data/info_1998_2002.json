@@ -18,8 +18,8 @@
                 "Sybase",
                 "PowerDesigner",
                 "JDBC",
-                "JMF",
-                "JavaMail",
+                "JMF,JavaMail",
+                "MSSQL",
                 "Access, Active X"
 
             ]
