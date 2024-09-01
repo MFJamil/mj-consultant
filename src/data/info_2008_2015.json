@@ -5,41 +5,75 @@
         {
             "title": "Front End",
             "items": [
-                "Vue",
-                "React",
-                "Angular",
-                "HTML5,css,tailwind",
-                "Swing,ThemeLeaf"
+                "HTML5,css3",
+                "Swing,AWT",
+                "JSP",
+                "JQuery",
+                "Java2D"
+                
             ]
         },
         {
             "title": "Back End",
             "items": [
-                "Spring Boot",
-                "Node JS",
+                "Xpath, Xalan, Saxon",
                 "Hibernate",
-                "Servlet/REST APIs"
+                "Servlet/REST APIs",
+                "Oracle",
+                "SQL"
             ]
         },
+        
+        {
+            "title": "Messaging",
+            "items": [
+                "MQ",
+                "JMS",
+                "JMX"
+            ]
+        },        
         {
             "title": "Languages",
             "items": [
                 "Java",
-                "Typescript",
                 "Javascript",
                 "Pyton",
-                "C++"
+                "XSLT"
             ]
         },
         {
-            "title": "Testing 123",
+            "title": "Testing",
             "items": [
                 "JUnit",
-                "Cypress",
-                "Selenium",
                 "Jest",
                 "Mockito"
             ]
+        },
+        {
+            "title": "Build Tools",
+            "items": [
+                "Maven",
+                "Subversion"
+            ]
+        },
+        {
+            "title": "Servers",
+            "items": [
+                "Nodejs",
+                "Tomcat",
+                ""
+            ]
+        },
+        {
+            "title": "Editors",
+            "items": [
+                "Eclipse",
+                "Intellij",
+                "Visual Code",
+                "Ultra Edit"
+            ]
         }
+
     ]
+
 }

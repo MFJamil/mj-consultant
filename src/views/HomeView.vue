@@ -121,7 +121,7 @@
       data: info_2002
     },
     {
-      image: 'mj_1998_new.png',
+      image: 'mj_1998.png',
       text: '1998 - 2002',
       data: info_1998
     },

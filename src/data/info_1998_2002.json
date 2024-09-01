@@ -1,45 +1,45 @@
 {
     "time": "1998-2002",
-    "picture": "assets/mj_1998_new.png",
+    "picture": "assets/mj_1998.png",
     "skills": [
         {
             "title": "Front End",
             "items": [
-                "Vue",
-                "React",
-                "Angular",
-                "HTML5,css,tailwind",
-                "Swing,ThemeLeaf"
+                "SwingSet",
+                "J2ME",
+                "Applet",
+                "Java2D",
+                "AWT"
             ]
         },
         {
             "title": "Back End",
             "items": [
-                "Spring Boot",
-                "Node JS",
-                "Hibernate",
-                "Servlet/REST APIs"
+                "Sybase",
+                "PowerDesigner",
+                "JDBC",
+                "JMF",
+                "JavaMail",
+                "Access, Active X"
+
             ]
         },
         {
             "title": "Languages",
             "items": [
                 "Java",
-                "Typescript",
-                "Javascript",
-                "Pyton",
-                "C++"
+                "Visual Basic",
+                "Power Builder"
             ]
         },
         {
-            "title": "Testing 123",
+            "title": "Editors",
             "items": [
-                "JUnit",
-                "Cypress",
-                "Selenium",
-                "Jest",
-                "Mockito"
+                "JBuilder",
+                "MS Visual Basic 6.0",
+                ""
             ]
-        }
+        }      
+
     ]
 }

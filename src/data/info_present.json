@@ -8,14 +8,16 @@
                 "Vue",
                 "React",
                 "Angular",
-                "HTML5,css,tailwind",
-                "Swing,ThemeLeaf"
+                "HTML5,css,sass",
+                "JSP,ThemeLeaf",
+                "Tailwind"
             ]
         },
         {
             "title": "Back End",
             "items": [
                 "Spring Boot",
+                "Spring Framework",
                 "Node JS",
                 "Hibernate",
                 "Servlet/REST APIs"
@@ -46,11 +48,32 @@
             "items": [
                 "Maven",
                 "Npm",
+                "Git",
                 "CI/CD",
                 "Jenkins",
-                "Docker",
+                "Docker/Kubernetes",
                 "CMake"
             ]
+        },
+        {
+            "title": "Servers",
+            "items": [
+                "Open Liberty",
+                "Websphere",
+                "Nodejs",
+                "OpenShift",
+                "Nginx"
+            ]
+        },
+        {
+            "title": "Editors",
+            "items": [
+                "Eclipse",
+                "Intellij",
+                "Visual Code",
+                "Ultra Edit"
+            ]
         }
+
     ]
 }
