@@ -60,9 +60,8 @@
         {
             "title": "Servers",
             "items": [
-                "Nodejs",
                 "Tomcat",
-                ""
+                "Apache Http Server"
             ]
         },
         {

@@ -35,6 +35,7 @@
             </template>
       </Carousel>
 
+
       <!--Carousel  :items= "['2019-Present','2015-2019','2008-2015','2002-2008','1998-2002']" class="border-2">
             <template #2019-Present>
               <div class="w-full">
