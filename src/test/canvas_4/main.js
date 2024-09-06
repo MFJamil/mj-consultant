@@ -1,12 +1,9 @@
-
-
 import {Raster} from './Raster.js'
 
 
 const config = {        };
 const raster = new Raster();
-let fps = 60;
-let prevTime = -1;
+
 
 
 let animatRef = 1;
@@ -120,42 +117,27 @@ export function dataChange(data){
     raster.draw(config);
 }
 
-function animateNext(timeStamp){
-    //console.log("...... " + timeStamp);
-    if (prevTime===-1){
-        prevTime = timeStamp;
-    }
-
-    let timeDiff = 1000/fps;
-    if ((timeStamp-prevTime)>=timeDiff){
-        config.startDraw = config.start;
-        raster.draw(config);
-        if (config.start>=config.width){
-            cancelAnimationFrame(animatRef);
-        } else{
-            config.start = config.start + (2*config.blockSize);
-        }
-    }
-    if (config.start<=config.width){
-        prevTime = timeStamp;
+function animateNext(){
+    config.startDraw = config.start;
+    raster.draw(config);
+    if (config.start>=config.width){
+        cancelAnimationFrame(animatRef);
+    } else{
+        config.start = config.start + config.blockSize;
         animatRef = requestAnimationFrame(animateNext)
     }
-    //console.log(`config.start (${config.start}) -- config.width (${config.width}) `)
-
 }
 
 export function doAnimate(){
-    raster.doAnimate(config);
-    
-    /*
     console.log("Animate is called ....");
+    /**/
     config.start = 1;
     const cont = document.getElementById('container');
     config.width = cont.clientWidth;
     config.height = cont.clientHeight;
     
     animatRef = requestAnimationFrame(animateNext);
-
+    /*
     let ref = setInterval(() => {
         
         animateStart ++;        

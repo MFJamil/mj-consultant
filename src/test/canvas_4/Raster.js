@@ -1,67 +1,9 @@
 
 export class Raster{
 
-
-    fps = 60;
-    prevTime = -1;
-    animatRef = 1;
-    animConfig={};
-    frameCount = 1;
-
-    animateAlways = false;
-
-
     constructor(){
     }
 
-
-
-    animateNext(timeStamp){
-        console.log(`Next (${this.frameCount++}) ......  ${timeStamp} start point : ${this.animConfig.startDraw}`);
-        if (this.prevTime===-1)  this.prevTime = timeStamp;
-        let timeDiff = 1000/this.fps;
-        if ((timeStamp-this.prevTime)>=timeDiff){^
-            
-            this.animConfig.startDraw = this.animConfig.start;
-            this.draw(this.animConfig);
-            if (this.doStopAnimation()){
-                cancelAnimationFrame(this.animatRef);
-            } else{
-                this.animConfig.start = this.animConfig.start + (2*this.animConfig.blockSize);
-            }
-        }
-        if (!this.doStopAnimation()){
-            this.prevTime = timeStamp;
-            this.animatRef = requestAnimationFrame(this.animateNext.bind(this))
-        }
-        //console.log(`config.start (${config.start}) -- config.width (${config.width}) `)
-    }
-
-    doStopAnimation(){
-        if (this.animateAlways){
-            return this.animConfig.start>=this.animConfig.width;
-        }else{
-            return this.animConfig.start>=this.animConfig.width*0.5;
-        }
-    }
-
-
-    doAnimate(config){
-        console.log("Animate is called ....");
-        this.animConfig = config;
-        this.animConfig.start = -1*(this.animConfig.width*0.25);
-        const cont = document.getElementById('container');
-        this.animConfig.width = cont.clientWidth;
-        this.animConfig.height = cont.clientHeight;
-
-        this.animConfig.ct.fillStyle = config.color2;
-        this.animConfig.ct.fillRect(0, 0, this.animConfig.width, this.animConfig.height);
-
-        setTimeout(() => {
-            this.animatRef = requestAnimationFrame(this.animateNext.bind(this));    
-        }, 100);
-        
-    }
 
 
 
@@ -69,8 +11,7 @@ export class Raster{
 
 
     draw(config){
-        //console.log("Config: " + JSON.stringify(config,null,2))
-       
+        console.log("Config: " + JSON.stringify(config,null,2))
         // Total Params
         this.ctx = config.ct;
         const ct = config.ct;
@@ -85,31 +26,31 @@ export class Raster{
         // Block Params
         if (config.startDraw){
             startDraw = config.startDraw;
-            endDraw = config.startDraw  +  (w * 0.225);
+            endDraw = config.startDraw  +  (w * 0.5);
         }
 
-        //console.log(`Start draw : ${startDraw} , End Draw : ${endDraw}`);
+        console.log(`Start draw : ${startDraw} , End Draw : ${endDraw}`);
         // Drawing Backgrounds
-        ct.fillStyle = config.color1;
-        ct.fillRect(0, 0, startDraw + (w * 0.225), h);
+        //ct.fillStyle = config.color1;
+        //ct.fillRect(0, 0, startDraw + (w * 0.225), h);
 
         ct.fillStyle = config.color2;
-        ct.fillRect((startDraw + (w * 0.225)), 0,w, h);
+        ct.fillRect(0, 0,w, h);
         
 
         const blockNr = 16;
         const blockSize = config.blockSize;
-        const startSize = blockSize/10;
+        const startSize = 2*blockSize;
 
 
         const setting1 = {
-            grow:true,
+            grow:false,
             onTop:true,
             ct: ct,
             h: h,
             w: w,
-            fcolor:config.color2,
-            bcolor:config.color1,
+            fcolor:config.color1,
+            bcolor:config.color2,
             startPaint: startDraw,
             endPaint: endDraw,
             blockNr: blockNr,
@@ -118,7 +59,7 @@ export class Raster{
             policy: config.policy
         }
         let result = this.drawBlock(setting1);
-        
+        /*
         const setting2 = {
             grow:false,
             onTop: result.onTop,
@@ -137,6 +78,7 @@ export class Raster{
         if (config.drawRight)
              result = this.drawBlock(setting2);
         ct.fillStyle = config.color2;
+        */
         //ct.fillRect(config.startDraw  +  (w * 0.5), 0,w, h);
     }
 
@@ -165,7 +107,7 @@ export class Raster{
             }
         }else{
             if (set.policy==='fixed'){
-                sizeInc = set.blockSize/((set.endPaint-set.startPaint)/set.blockSize);
+                sizeInc = set.startSize/((set.endPaint-set.startPaint)/set.blockSize);
             }else{
                 sizeInc =  set.startSize/set.blockNr;
             }
@@ -176,9 +118,9 @@ export class Raster{
 
 
     drawBlock(set){
-        //console.log((set.grow?"Left":"Right") + " :: " + JSON.stringify(set,null,2));
+        console.log((set.grow?"Left":"Right") + " :: " + JSON.stringify(set,null,2));
         const sizeInc = this.calculateSize(set);
-        //console.log("Size Increment : " + sizeInc);
+        console.log("Size Increment : " + sizeInc);
 
 
         /*
@@ -199,9 +141,9 @@ export class Raster{
             let doPaint = true;
             //console.log("X : " + sx);
             //console.log("............................................");
-            set.ct.fillStyle = set.bcolor;
+            //set.ct.fillStyle = set.bcolor;
             
-            set.ct.fillRect(sx, 0, ss, set.h);
+            //set.ct.fillRect(sx, 0, ss, set.h);
             //if () console.log("I AM ON THE ENDDDDDD")
             let lastLine = ss>=16;
             while(sy<=set.h){
@@ -213,8 +155,11 @@ export class Raster{
                 }else{
                     //console.log(" --- > Size : " + ss );
                     //this.drawSquare('#ff0000',set.bcolor, sx , sy , ss , ss);        
-                    this.drawSquare(set.bcolor,set.bcolor, sx , sy , ss , ss);        
+                    //this.drawSquare(set.bcolor,set.bcolor, sx , sy , ss , ss);        
+                         
+
                 }
+                
                 sy += blkSize;
                 doPaint = !doPaint;
             }
@@ -227,6 +172,7 @@ export class Raster{
             sx += blkSize;
             atTop = !atTop;
             sy = atTop?(-(blkSize/2)):(blkSize/2);
+            
         }
         return {endPoint: sx, lastSize: ss-sizeInc,onTop: !atTop} ;
     }
