@@ -18,7 +18,7 @@ window.addEventListener('load',()=>{
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
     config.ct = ctx;
-    config.color1 = '#005ABC';
+    config.color1 = '#005A8C';
     config.color2 = '#B7F9AA';
     config.blockSize = 16;
     config.policy = "fixed";
@@ -144,8 +144,9 @@ function animateNext(timeStamp){
 
 }
 
-export function doAnimate(){
-    raster.doAnimate(config);
+export function doAnimate(always=false){
+    if (always) raster.doAnimateAlways(config);
+    else raster.doAnimateOnce(config);
     
     /*
     console.log("Animate is called ....");

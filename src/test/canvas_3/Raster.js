@@ -9,6 +9,7 @@ export class Raster{
     frameCount = 1;
 
     animateAlways = false;
+    stopAnimation = false;
 
 
     constructor(){
@@ -17,10 +18,10 @@ export class Raster{
 
 
     animateNext(timeStamp){
-        console.log(`Next (${this.frameCount++}) ......  ${timeStamp} start point : ${this.animConfig.startDraw}`);
+        //console.log(`Next (${this.frameCount++}) ......  ${timeStamp} start point : ${this.animConfig.startDraw}`);
         if (this.prevTime===-1)  this.prevTime = timeStamp;
         let timeDiff = 1000/this.fps;
-        if ((timeStamp-this.prevTime)>=timeDiff){^
+        if ((timeStamp-this.prevTime)>=timeDiff){
             
             this.animConfig.startDraw = this.animConfig.start;
             this.draw(this.animConfig);
@@ -33,21 +34,83 @@ export class Raster{
         if (!this.doStopAnimation()){
             this.prevTime = timeStamp;
             this.animatRef = requestAnimationFrame(this.animateNext.bind(this))
-        }
+        }else{this.animationStopped();}
         //console.log(`config.start (${config.start}) -- config.width (${config.width}) `)
     }
 
     doStopAnimation(){
         if (this.animateAlways){
-            return this.animConfig.start>=this.animConfig.width;
+            return this.animConfig.start>=this.animConfig.width *1.2;
         }else{
             return this.animConfig.start>=this.animConfig.width*0.5;
         }
     }
+    animationStopped(){
+        if (this.stopAnimation) return;
+        if (this.animateAlways){
+            setTimeout(() => {
+                let color1 = this.animConfig.color1;
+                this.animConfig.color1 = this.animConfig.color2;
+                this.animConfig.color2 = color1;
+                this.doStartAnimation(this.animConfig);
+                /*
+                this.animConfig.start = -1*(this.animConfig.width*0.25);
+                const cont = document.getElementById('container');
+                this.animConfig.width = cont.clientWidth;
+                this.animConfig.height = cont.clientHeight;
+        
+                this.animConfig.ct.fillStyle = this.animConfig.color2;
+                this.animConfig.ct.fillRect(0, 0, this.animConfig.width, this.animConfig.height);
+        
+        
+                setTimeout(() => {
+                    this.animatRef = requestAnimationFrame(this.animateNext.bind(this));    
+                }, 1000);
+                */
+    
+            }, 1000);
+
+    
+        }
+    }
 
 
-    doAnimate(config){
-        console.log("Animate is called ....");
+    doAnimateOnce(config){
+        console.log("Animate Once is called ....");
+        this.animateAlways = false;
+        this.animConfig = config;
+
+        this.doStartAnimation(config);
+        /*
+        this.animConfig.start = -1*(this.animConfig.width*0.25);
+        const cont = document.getElementById('container');
+        this.animConfig.width = cont.clientWidth;
+        this.animConfig.height = cont.clientHeight;
+
+        this.animConfig.ct.fillStyle = config.color2;
+        this.animConfig.ct.fillRect(0, 0, this.animConfig.width, this.animConfig.height);
+
+        setTimeout(() => {
+            this.animatRef = requestAnimationFrame(this.animateNext.bind(this));    
+        }, 1000);
+        */
+        
+    }
+
+    doAnimateAlways(config){
+        console.log("Animate Always is called ....");
+        if (this.animateAlways){
+            this.stopAnimation = true;
+            this.animateAlways = false;
+        }else{
+            this.animateAlways = true;
+            this.stopAnimation = false;
+        }
+        
+        //if (this.stopAnimation) this.stopAnimation = false;
+        
+        this.doStartAnimation(config);
+        /*
         this.animConfig = config;
         this.animConfig.start = -1*(this.animConfig.width*0.25);
         const cont = document.getElementById('container');
@@ -59,10 +122,26 @@ export class Raster{
 
         setTimeout(() => {
             this.animatRef = requestAnimationFrame(this.animateNext.bind(this));    
-        }, 100);
+        }, 1000);
+        */
         
     }
 
+    doStartAnimation(config){
+        this.animConfig = config;
+        this.animConfig.start = -1*(this.animConfig.width*0.25);
+        const cont = document.getElementById('container');
+        this.animConfig.width = cont.clientWidth;
+        this.animConfig.height = cont.clientHeight;
+
+        this.animConfig.ct.fillStyle = config.color2;
+        this.animConfig.ct.fillRect(0, 0, this.animConfig.width, this.animConfig.height);
+
+        setTimeout(() => {
+            this.animatRef = requestAnimationFrame(this.animateNext.bind(this));    
+        }, 1000);
+
+    }
 
 
 
@@ -94,7 +173,7 @@ export class Raster{
         ct.fillRect(0, 0, startDraw + (w * 0.225), h);
 
         ct.fillStyle = config.color2;
-        ct.fillRect((startDraw + (w * 0.225)), 0,w, h);
+        ct.fillRect((startDraw + (w * 0.225)), 0,(w*1.25), h);
         
 
         const blockNr = 16;
