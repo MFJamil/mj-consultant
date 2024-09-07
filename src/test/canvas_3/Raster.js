@@ -20,7 +20,7 @@ export class Raster{
         console.log(`Next (${this.frameCount++}) ......  ${timeStamp} start point : ${this.animConfig.startDraw}`);
         if (this.prevTime===-1)  this.prevTime = timeStamp;
         let timeDiff = 1000/this.fps;
-        if ((timeStamp-this.prevTime)>=timeDiff){^
+        if ((timeStamp-this.prevTime)>=timeDiff){
             
             this.animConfig.startDraw = this.animConfig.start;
             this.draw(this.animConfig);

@@ -23,7 +23,7 @@
 
     <section class="page gap-5" id="skills" >
       
-      <Carousel  :items= "skillIntervals.map(item=>item.text)" >
+      <Carousel  :items= "skillIntervals.map(item=>item.text)" @selected="handleSelection" >
             <template v-for="item in skillIntervals" :key="item.text" #[item.text]>
               <div 
                 class="w-full bg-white text-black opacity-100 cursor-pointer"  
@@ -132,6 +132,9 @@
   const switchSkills = (item:any)=>{
     console.log("New Skills are selected for : " + JSON.stringify(item,null,2))
     info.value = item.data;
+  }
+  const handleSelection=(item)=>{
+    console.log("Selected ..... " + item);
   }
   
 </script>
