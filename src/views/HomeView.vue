@@ -22,42 +22,24 @@
 
 
     <section class="page gap-5" id="skills" >
-      
-      <Carousel  :items= "skillIntervals.map(item=>item.text)" @selected="handleSelection" >
-            <template v-for="item in skillIntervals" :key="item.text" #[item.text]>
-              <div 
-                class="w-full bg-white text-black opacity-100 cursor-pointer"  
-                @click="switchSkills(item)"
-                >
-                <img class="absolute size-24 h-auto opacity-40 translate-x-10" :src="`assets/${item.image}`" />
-                <span class="text-sm z-40">{{ item.text }}</span>
-              </div>
-            </template>
-      </Carousel>
+      <div  id="skillsCarouselContainer">
+        <Carousel  :items= "skillIntervals.map(item=>item.text)" @selected="handleSelection"  @click="showSkills(false)" class="opacity-0 scale-0" shown="opacity-100 scale-100">
+              <template v-for="item in skillIntervals" :key="item.text" #[item.text]>
+                <div 
+                  class="w-full bg-white text-black opacity-100 cursor-pointer"  
+                  @click="switchSkills(item)"
+                  >
+                  <img class="absolute size-24 h-auto opacity-40 translate-x-10" :src="`assets/${item.image}`" />
+                  <span class="text-sm z-40">{{ item.text }}</span>
+                </div>
+              </template>
+        </Carousel>
+      </div>
 
-
-      <!--Carousel  :items= "['2019-Present','2015-2019','2008-2015','2002-2008','1998-2002']" class="border-2">
-            <template #2019-Present>
-              <div class="w-full">
-                <img class="absolute size-24 h-auto opacity-40 translate-x-10" src="../assets/images/mj_2020.png" />
-                <span class="text-sm z-40">2019 - Present</span>
-              </div>
-              
-            </template>
-            <template #2015-2019>
-              <span class="text-sm">2015 - 2019</span>
-            </template>
-            <template #2008-2015>
-              <span class="text-sm">2008 - 2015</span>
-            </template>
-            <template #2002-2008>
-              <span class="text-sm">2002 - 2008</span>
-            </template>
-            <template #1998-2002>
-              <span class="text-sm">1998-2002</span>
-            </template>
-        </Carousel-->
-      <div :class="`${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} flex w-full h-auto justify-center items-center opacity-0 duration-1500 translate-y-10 scale-0`" shown="scale-100 opacity-100 -translate-y-10"  >
+      <div  ref="skillsContainer" 
+        :class="`${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} flex w-full h-auto justify-center items-center opacity-0 duration-1000 translate-y-10 scale-0`" 
+        shown="scale-100 opacity-100 -translate-y-10"  
+        >
         <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" settings="width:300;" class="my-5 mx-4">
           <template #front>
             <p class="text-2xl font-sans font-bold justify-center align-middle py-20 text-blue-900">{{ skill.title }}</p> 
@@ -78,7 +60,7 @@
 </template>
 
 <script setup lang="ts">
-  import {ref} from 'vue';
+  import {onMounted, ref} from 'vue';
   import Qube from 'smyld-lib-3d/src/components/Qube.vue'
   import Carousel from 'smyld-lib-3d/src/components/Carousel.vue'
 
@@ -98,7 +80,9 @@
   
   const isMobile = ref(onMobile());
   const tr = ref(t);
+  const skillsContainer = ref(null);
   const info = ref(info_present);
+  
   
   const skillIntervals = [
     {
@@ -128,13 +112,20 @@
     },
     
   ]
-
+  
+  const showSkills = (show:boolean)=>{
+    (skillsContainer.value as any).style.opacity = show?'1':'0';
+  }
   const switchSkills = (item:any)=>{
+    
     console.log("New Skills are selected for : " + JSON.stringify(item,null,2))
     info.value = item.data;
+    showSkills(true);
+
   }
-  const handleSelection=(item)=>{
-    console.log("Selected ..... " + item);
+  const handleSelection=(itemText:any)=>{
+    console.log("Selected ..... " + itemText);
+    switchSkills(skillIntervals.find(interval=>interval.text===itemText));
   }
   
 </script>
@@ -164,13 +155,19 @@
         background-position: 0% 0%;
     }
 }
+#skillsCarouselContainer{
+  width: 300px;
+  
+  margin: auto;
+}
+
 .page{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 
