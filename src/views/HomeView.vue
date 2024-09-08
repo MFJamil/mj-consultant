@@ -23,11 +23,15 @@
 
     <section class="page gap-1" id="skills" >
       <div  id="skillsCarouselContainer" class="opacity-0 scale-0 duration-1000" shown="scale-100 opacity-100">
-        <Carousel  :items= "skillIntervals.map(item=>item.text)" @selected="handleSelection"  @click="showSkills(false)" class="opacity-0 scale-0" shown="opacity-100 scale-100">
+        <Carousel  :items= "skillIntervals.map(item=>item.text)" 
+            @selected="handleSelection"  
+            @click:forward="showSkills(false)" 
+            @click:backward="showSkills(false)" 
+            class="opacity-0 scale-0" shown="opacity-100 scale-100">
               <template v-for="item in skillIntervals" :key="item.text" #[item.text]>
                 <div 
-                  class="w-full bg-white text-black opacity-100 cursor-pointer"  
-                  @click="switchSkills(item)"
+                  class="w-full bg-white text-black opacity-100"  
+                  
                   >
                   <img class="absolute size-24 h-auto opacity-40 translate-x-10" :src="`assets/${item.image}`" />
                   <span class="text-sm z-40">{{ item.text }}</span>
