@@ -4,7 +4,7 @@
 
     <section class="page" >
       
-      <div class="w-full py-20 backdrop-saturate-100 backdrop-blur-xl rounded-3xl flex flex-col justify-center items-center -translate-y-20" >
+      <div class="w-auto py-20 m-auto rounded-3xl backdrop-saturate-100 backdrop-blur-xl flex flex-col justify-center items-center -translate-y-20 ring-2 ring-white" >
         <div shown="-translate-y-5 duration-1500 opacity-100 scale-100"  class="scale-0 opacity-0 gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
         <div shown="translate-y-5 duration-1500 opacity-100 scale-100" class="scale-0 opacity-0 gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
         <div class="scale-0 opacity-0 rounded-2xl" 
@@ -22,7 +22,7 @@
 
 
     <section class="page gap-1" id="skills" >
-      <div  id="skillsCarouselContainer">
+      <div  id="skillsCarouselContainer" class="opacity-0 scale-0 duration-1000" shown="scale-100 opacity-100">
         <Carousel  :items= "skillIntervals.map(item=>item.text)" @selected="handleSelection"  @click="showSkills(false)" class="opacity-0 scale-0" shown="opacity-100 scale-100">
               <template v-for="item in skillIntervals" :key="item.text" #[item.text]>
                 <div 
@@ -36,9 +36,9 @@
         </Carousel>
       </div>
 
-      <div  ref="skillsContainer" 
-        :class="`${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} flex w-full h-auto justify-center items-center opacity-0 duration-1000 scale-0`" 
-        shown="scale-100 opacity-100 "  
+      <div  ref="skillsContainer"  
+        :class="`${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} flex w-full h-auto justify-center items-center opacity-0 duration-1000`" 
+        
         >
         <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" settings="width:300;" class="my-5 mx-4">
           <template #front>
