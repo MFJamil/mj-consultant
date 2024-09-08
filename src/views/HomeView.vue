@@ -21,8 +21,8 @@
     </section>
 
 
-    <section class="page gap-1" id="skills" >
-      <div  id="skillsCarouselContainer" class="opacity-0 scale-0 duration-1000" shown="scale-100 opacity-100">
+    <section class="page" id="skills" >
+      <div  id="skillsCarouselContainer" class="opacity-0 scale-0 duration-1000 w-full" shown="scale-100 opacity-100">
         <Carousel  :items= "skillIntervals.map(item=>item.text)" 
             @selected="handleSelection"  
             @click:forward="showSkills(false)" 
@@ -41,7 +41,7 @@
       </div>
 
       <div  ref="skillsContainer"  
-        :class="`${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} flex w-full h-auto justify-center items-center opacity-0 duration-1000`" 
+        :class="`h-60 flex w-full ${!isMobile?'flex-wrap flex-row':'px-5 flex-1 flex-col'} justify-center items-center opacity-0 duration-1000 bottom-0`" 
         
         >
         <Qube v-for="skill in info.skills" :key="skill.title" :openLink="false" settings="width:300;" class="my-5 mx-4">
@@ -158,11 +158,6 @@
     100%{
         background-position: 0% 0%;
     }
-}
-#skillsCarouselContainer{
-  width: 300px;
-  
-  margin: auto;
 }
 
 .page{
