@@ -4,7 +4,7 @@
 
     <section class="page" >
       
-      <div class="w-full py-20 bg-white rounded-3xl flex flex-col justify-center items-center -translate-y-20" >
+      <div class="w-full py-20 backdrop-saturate-100 backdrop-blur-xl rounded-3xl flex flex-col justify-center items-center -translate-y-20" >
         <div shown="-translate-y-5 duration-1500 opacity-100 scale-100"  class="scale-0 opacity-0 gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">Full Stack</div>
         <div shown="translate-y-5 duration-1500 opacity-100 scale-100" class="scale-0 opacity-0 gemini mb-4 lg:text-5xl !leading-tight text-3xl font-sans font-extrabold py-0">IT Consultant</div>
         <div class="scale-0 opacity-0 rounded-2xl" 
