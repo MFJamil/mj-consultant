@@ -39,6 +39,7 @@
           <a class="pi pi-globe text-white cursor-pointer" @click="$emit('action','showLangs')" ></a>
           <a href="https://www.xing.com/profile/Mohammed_Jamil2/web_profiles"><img src="../../assets/images/xing-logo-2447.svg" style="width: 20px;" /></a>
           <a href="https://www.linkedin.com/in/mj-consultant/"><img src="../../assets/images/linkedin-logo-2430.svg" style="width: 20px;" /></a>
+          <a href="https://discord.com/channels/1285270428478214186/1285277310135832720"><img src="../../assets/images/icon-discord.svg" style="width: 20px; color:white;" /></a>
           
         </div>
 

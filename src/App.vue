@@ -17,6 +17,7 @@
   
 </template>
 <script lang="ts" setup>
+
 import { RouterView } from 'vue-router';
 import Footer from './components/panels/Footer.vue'
 import Footer_Mobile from './components/panels/Footer_mobile.vue'
