@@ -36,10 +36,12 @@
           <div>&copy; MJ Consultant<span>, August 2024</span></div>
         </div>
         <div class="flex items-center space-x-3 rtl:space-x-reverse text-white text-sm">
+
           <a class="pi pi-globe text-white cursor-pointer" @click="$emit('action','showLangs')" ></a>
           <a href="https://www.xing.com/profile/Mohammed_Jamil2/web_profiles"><img src="../../assets/images/xing-logo-2447.svg" style="width: 20px;" /></a>
           <a href="https://www.linkedin.com/in/mj-consultant/"><img src="../../assets/images/linkedin-logo-2430.svg" style="width: 20px;" /></a>
           <a href="https://discord.com/channels/1285270428478214186/1285277310135832720"><img src="../../assets/images/icon-discord.svg" style="width: 20px; color:white;" /></a>
+          <a href="https://web.whatsapp.com/send?phone=4915209511152&text="><img src="../../assets/images/whatsapp-svgrepo-com.svg" style="width: 20px;" /></a>
           
         </div>
 
