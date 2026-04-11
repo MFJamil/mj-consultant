@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col min-h-screen font-Roboto">
-    <Header :menu="menu" title="MJ Consultant" icon-file="./assets/images/Logo_MJ_shadow_white.png" /> 
+    <Header :menu="menu" title="MJ Consultant" icon-file="./assets/images/Logo_MJ_shadow_white.png" />
+    <h2>Test</h2>
     <div class="flex flex-col min-h-screen font-Roboto">
       <RouterView />
 
